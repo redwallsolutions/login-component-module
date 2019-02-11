@@ -1,1 +1,5 @@
-//Dont forget to import and export your components here!
+import {LoginFonts} from './components/Style';
+import Login from './components/Login';
+
+export {LoginFonts};
+export default Login;
