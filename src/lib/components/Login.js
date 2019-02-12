@@ -4,42 +4,71 @@ import { Form } from 'informed';
 import Field from './Field';
 import RedwallLogoLight from '../assets/img/redwall-logo-light.png';
 import { FaUserAlt , FaLock} from 'react-icons/fa';
-import { BoxTitle, ButtonStyled } from './Style';
+import { BoxTitle, ButtonStyled, Text } from './Style';
+import {Link, HashRouter, NavLink, Route} from 'react-router-dom';
 
 import Particles from 'react-particles-js';
 import particlesConfig from './../assets/js/particlesjs-config.json';
 class Login extends Component {
 
+  flipBack = () => {
+    this.setState({
+      isBack: true
+    });
+  }
+
+  flipFront = () => {
+    this.setState({
+      isBack:false
+    });
+  }
+
+  isBack = () => window.location.hash === '#/new';
   render() {
     const {title, buttonText} = this.props;
+    console.log("rendered");
     return (
       <React.Fragment>
         <Particles params={particlesConfig} style={{position:'fixed',zIndex:1, width: '100vw'}}/>
         <Background>
-          <Box>
-            <BoxHeader>
-              <BoxHeaderImg src={RedwallLogoLight}/>
-            </BoxHeader>
-            <BoxTitle>{title}</BoxTitle>
-            <Form>
-              <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                <FormGroup>
-                  <Field field='login' placeholder='Username' icon={<FaUserAlt/>}/>
-                </FormGroup>
-                <FormGroup>
-                  <Field type='password' field='password' placeholder='Password' icon={<FaLock/>}/>
-                </FormGroup>
-                <FormGroup justify='space-between'>
-                  <SubtleLink style={{position: 'relative',left: '2em'}}>
-                    Esqueci a senha
-                  </SubtleLink>
-                  <ButtonStyled>
-                    {buttonText}
-                  </ButtonStyled>
-                </FormGroup>
-              </div>
-            </Form>
-          </Box>
+          <HashRouter>
+            <Route path='/' render={()=>(
+              <React.Fragment>
+                <Box className='front' isBack={this.isBack()}>
+                  <BoxHeader>
+                    <BoxHeaderImg src={RedwallLogoLight}/>
+                  </BoxHeader>
+                  <BoxTitle>{title}</BoxTitle>
+                  <Form>
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                      <FormGroup>
+                        <Field field='login' placeholder='Username' icon={<FaUserAlt/>}/>
+                      </FormGroup>
+                      <FormGroup>
+                        <Field type='password' field='password' placeholder='Password' icon={<FaLock/>}/>
+                      </FormGroup>
+                      <FormGroup justify='space-between'>
+                        <SubtleLink style={{position: 'relative',left: '2em'}}>
+                          Esqueci a senha
+                        </SubtleLink>
+                        <ButtonStyled>
+                          {buttonText}
+                        </ButtonStyled>
+                      </FormGroup>
+                    </div>
+                  </Form>
+                  <Link to="/new">
+                    <Text>
+                      Quero criar uma conta!
+                    </Text>
+                  </Link>
+                </Box>
+                <Box className='back' isBack={this.isBack()}>
+                  <h1>It's the back-face.</h1>
+                </Box>
+              </React.Fragment>
+            )}/>
+          </HashRouter>
         </Background>
       </React.Fragment>
     );
