@@ -43,30 +43,57 @@ const flipFront = keyframes`
   0% {
     transform: rotateY(0deg);
   }
-
   50% {
-    transform: perspective(100em) scale(.7) rotateY(180deg);
+    transform: perspective(50em) scale(.7) rotateY(180deg);
   }
   100% {
-    transform: perspective(100em) scale(1) rotateY(180deg);
+    transform: perspective(50em) scale(1) rotateY(180deg);
   }
 `
 
-const flipFrontAnimatioProps = css`
-  ${flipFront} 2s ease-in-out both;
+const flipFrontReverse = keyframes`
+  0% {
+    transform: perspective(50em) scale(.7) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(50em) scale(1) rotateY(0deg);
+  }
+`
+
+const flipFrontAnimationProps = css`
+  animation: ${flipFront} 2s ease-in-out both;
+`
+
+const flipFrontAnimationPropsReverse = css`
+  animation: ${flipFrontReverse} 1s ease-in-out both;
 `
 
 const flipBack = keyframes`
   0% {
-    transform: perspective(100em) scale(.7) rotateY(-180deg);
+    transform: perspective(50em) scale(.7) rotateY(-180deg);
   }
   100% {
-    transform: perspective(100em) scale(1) rotateY(0deg);
+    transform: perspective(50em) scale(1) rotateY(0deg);
   }
 `
 
+const flipBackReverse = keyframes`
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: perspective(50em) scale(.7) rotateY(-170deg);
+  }
+  100% {
+    transform: perspective(50em) scale(1) rotateY(-170deg);
+}
+`
+
 const flipBackAnimationProps = css`
-  ${flipBack} 1s ease-in-out both;
+  animation: ${flipBack} 1s ease-in-out both;
+`
+const flipBackAnimationPropsReverse = css`
+  animation: ${flipBackReverse} 2s ease-in-out both;
 `
 
 export const Box = styled.div `
@@ -84,19 +111,22 @@ export const Box = styled.div `
 
   &.back {
     transform:rotateY(-180deg);
-    animation: '';
-    animation: ${props=> props.isBack ? flipBackAnimationProps : ''};
+    ${props=>props.isBack && !props.isFirstTime && flipBackAnimationProps};
+    ${props=>!props.isBack && !props.isFirstTime && flipBackAnimationPropsReverse};
+    ${props=>props.isBack && props.isFirstTime && flipBackAnimationProps};
   }
 
   &.front {
-    animation: ${comin} 3s cubic-bezier(0,1.06,0,.99) .3s both;
-    animation: ${props=> props.isBack ?  flipFrontAnimatioProps : ''}
+    animation: ${props=> props.isFirstTime && !props.isBack ? comin : ''} 3s cubic-bezier(0,1.06,0,.99) .3s both;
+    ${props=> (!props.isFirstTime && props.isBack) && flipFrontAnimationProps}
+    ${props=> (!props.isFirstTime && !props.isBack) && flipFrontAnimationPropsReverse}
+    ${props=> (props.isFirstTime && props.isBack) && flipFrontAnimationProps}
   }
 
 `
 
 export const BoxHeader = styled.div `
-  background-color: #E30613;
+  background-color: ${props=> props.isBack ? 'white' : '#E30613'};
   box-shadow: 0 0 80px 0 rgba(0,0,0,0.2) inset;
   height: 30%;
   display: flex;

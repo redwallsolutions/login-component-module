@@ -11,22 +11,19 @@ import Particles from 'react-particles-js';
 import particlesConfig from './../assets/js/particlesjs-config.json';
 class Login extends Component {
 
-  flipBack = () => {
-    this.setState({
-      isBack: true
-    });
+  constructor(props) {
+    super(props);
+    this.firstTime = true;
   }
 
-  flipFront = () => {
-    this.setState({
-      isBack:false
-    });
+  componentDidMount() {
+    this.firstTime = false;
   }
 
   isBack = () => window.location.hash === '#/new';
+  isFirstTime = () => this.firstTime;
   render() {
     const {title, buttonText} = this.props;
-    console.log("rendered");
     return (
       <React.Fragment>
         <Particles params={particlesConfig} style={{position:'fixed',zIndex:1, width: '100vw'}}/>
@@ -34,8 +31,8 @@ class Login extends Component {
           <HashRouter>
             <Route path='/' render={()=>(
               <React.Fragment>
-                <Box className='front' isBack={this.isBack()}>
-                  <BoxHeader>
+                <Box className='front' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
+                  <BoxHeader isBack={false}>
                     <BoxHeaderImg src={RedwallLogoLight}/>
                   </BoxHeader>
                   <BoxTitle>{title}</BoxTitle>
@@ -63,8 +60,10 @@ class Login extends Component {
                     </Text>
                   </Link>
                 </Box>
-                <Box className='back' isBack={this.isBack()}>
-                  <h1>It's the back-face.</h1>
+                <Box className='back' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
+                  <BoxHeader isBack={true}>
+                    <BoxHeaderImg src={RedwallLogoLight}/>
+                  </BoxHeader>
                 </Box>
               </React.Fragment>
             )}/>
