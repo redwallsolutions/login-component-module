@@ -1,5 +1,5 @@
 import styled, {createGlobalStyle, keyframes, css} from 'styled-components';
-// import pattern from '../assets/img/pattern.jpg';
+import {NavLink} from 'react-router-dom';
 import Poppins from '../assets/fonts/Poppins-Regular.ttf';
 
 export const LoginFonts = createGlobalStyle `
@@ -206,15 +206,22 @@ export const ButtonStyled = styled.button`
   transition: background .2s, color .2s, border .1s;
   cursor: pointer;
   color: ${primaryColor};
+  transition: opacity .5s, transform .2s ease-in-out;
   &:hover,:active,:focus {
     color: #fff;
     background-color: ${primaryColor};
     border-color: transparent;
     box-shadow: 0 0 30px -3px rgba(0,0,0,0.3) inset;
   }
+  &:active {
+    transform: scale(.98);
+  }
+  &:disabled {
+    opacity: .5;
+  }
 `
 
-export const SubtleLink = styled.a`
+export const SubtleText = styled.p`
   opacity: .7;
   font-size: 12px;
   cursor: pointer;
@@ -231,4 +238,10 @@ export const Text = styled.p`
   &:hover,&:focus,&:active {
     color: rgb(89,89,89);
   }
+`
+
+export const NavLinkStyled = styled(NavLink)`
+  text-decoration: none;
+  color: rgb(89,89,89);
+  letter-spacing: .8px;
 `

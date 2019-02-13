@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import {Background, Box, BoxHeader, BoxHeaderImg, FormGroup, SubtleLink} from './Style';
+import PropTypes from 'prop-types';
+import {Background, Box, BoxHeader, BoxHeaderImg, FormGroup, SubtleText, BoxTitle, ButtonStyled, Text, NavLinkStyled} from './Style';
 import { Form } from 'informed';
 import Field from './Field';
+import BoxContent from './BoxContent';
 import RedwallLogoLight from '../assets/img/redwall-logo-light.png';
 import RedwallLogoDark from '../assets/img/redwall-logo-dark.png';
 import { FaUserAlt , FaLock, FaEnvelope} from 'react-icons/fa';
-import { BoxTitle, ButtonStyled, Text } from './Style';
-import {Link, HashRouter, NavLink, Route} from 'react-router-dom';
-
+import { HashRouter, Route} from 'react-router-dom';
 import Particles from 'react-particles-js';
 import particlesConfig from './../assets/js/particlesjs-config.json';
 class Login extends Component {
@@ -17,14 +17,37 @@ class Login extends Component {
     this.firstTime = true;
   }
 
+  state = {
+    frontButtonIsLoading: false,
+    backButtonIsLoading: false
+  }
+
   componentDidMount() {
     this.firstTime = false;
   }
 
   isBack = () => window.location.hash === '#/new';
   isFirstTime = () => this.firstTime;
+  extractFrontFormApi = (formApi) => {
+    this.formApi = formApi;
+  }
+
+  frontOnSubmit = (data) => {
+    this.props.frontOnSubmit(data);
+    setTimeout(function () {
+      data.component.toggleButtonLoading();
+    }, 500);
+  }
+
+  backOnSubmit = (data) => {
+    this.props.backOnSubmit(data);
+    setTimeout(function () {
+      data.component.toggleButtonLoading();
+    }, 500);
+  }
   render() {
-    const {title, buttonText} = this.props;
+    const {frontTitle, frontButtonText, frontButtonLoadingText,
+          backTitle, backButtonText, backButtonLoadingText} = this.props;
     return (
       <React.Fragment>
         <Particles params={particlesConfig} style={{position:'fixed',zIndex:1, width: '100vw'}}/>
@@ -36,61 +59,63 @@ class Login extends Component {
                   <BoxHeader isBack={false}>
                     <BoxHeaderImg src={RedwallLogoLight}/>
                   </BoxHeader>
-                  <BoxTitle>{title}</BoxTitle>
-                  <Form>
-                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                      <FormGroup>
-                        <Field field='login' placeholder='Username' icon={<FaUserAlt/>}/>
-                      </FormGroup>
-                      <FormGroup>
-                        <Field type='password' field='password' placeholder='Password' icon={<FaLock/>}/>
-                      </FormGroup>
-                      <FormGroup justify='space-between'>
-                        <SubtleLink style={{position: 'relative',left: '2em'}}>
-                          Esqueci a senha
-                        </SubtleLink>
-                        <ButtonStyled>
-                          {buttonText}
-                        </ButtonStyled>
-                      </FormGroup>
-                    </div>
-                  </Form>
-                  <Link to='/new'>
+                  <BoxTitle>{frontTitle}</BoxTitle>
+                  <BoxContent
+                    buttonText={frontButtonText}
+                    buttonLoadingText={frontButtonLoadingText}
+                    onSubmit={this.frontOnSubmit}
+                    subtleText={<SubtleText style={{position: 'relative',left: '2em'}}>Esqueci a senha</SubtleText>}
+                    formGroups={[{
+                      name:'email',
+                      type:'email',
+                      icon:<FaEnvelope/>,
+                      placeholder:'E-mail'
+                    }, {
+                      name:'password',
+                      type: 'password',
+                      icon: <FaLock/>,
+                      placeholder: 'Senha'
+                    }]}/>
+                  <NavLinkStyled to='/new'>
                     <Text>
                       Quero criar uma conta!
                     </Text>
-                  </Link>
+                  </NavLinkStyled>
                 </Box>
                 <Box className='back' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
                   <BoxHeader isBack={true}>
                     <BoxHeaderImg src={RedwallLogoDark}/>
                   </BoxHeader>
                   <BoxTitle>
-                    Cadastre-se
+                    {backTitle}
                   </BoxTitle>
-                  <Form>
-                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                      <FormGroup>
-                        <Field type='text' placeholder='Nome Completo' name='fullName' icon={<FaUserAlt/>}/>
-                      </FormGroup>
-                      <FormGroup>
-                        <Field type='email' placeholder='E-mail' name='email' icon={<FaEnvelope/>}/>
-                      </FormGroup>
-                      <FormGroup>
-                        <Field type='password' placeholder='Senha' name='password' icon={<FaLock/>}/>
-                      </FormGroup>
-                      <FormGroup justify="space-between">
-                        <NavLink to="/">
-                          <SubtleLink>
-                            Voltar para Login
-                          </SubtleLink>
-                        </NavLink>
-                        <ButtonStyled>
-                          Cadastrar
-                        </ButtonStyled>
-                      </FormGroup>
-                    </div>
-                  </Form>
+                  <BoxContent
+                    buttonText={backButtonText}
+                    buttonLoadingText={backButtonLoadingText}
+                    onSubmit={this.backOnSubmit}
+                    subtleText={
+                      <NavLinkStyled to='/'>
+                        <SubtleText>
+                          Voltar para login
+                        </SubtleText>
+                      </NavLinkStyled>
+                    }
+                    formGroups={[{
+                      name:'fullName',
+                      placeholder:'Nome Completo',
+                      type: 'text',
+                      icon:<FaUserAlt/>
+                    }, {
+                      name:'email',
+                      type:'email',
+                      icon:<FaEnvelope/>,
+                      placeholder:'Seu melhor email'
+                    }, {
+                      name:'password',
+                      type: 'password',
+                      icon: <FaLock/>,
+                      placeholder: 'Senha'
+                    }]}/>
                 </Box>
               </React.Fragment>
             )}/>
@@ -99,7 +124,27 @@ class Login extends Component {
       </React.Fragment>
     );
   }
+}
 
+Login.propTypes = {
+  frontTitle: PropTypes.string,
+  backTitle: PropTypes.string,
+  frontButtonText: PropTypes.string,
+  backButtonText: PropTypes.string,
+  frontButtonLoadingText: PropTypes.string,
+  backButtonLoadingText: PropTypes.string,
+  frontOnSubmit: PropTypes.func
+}
+
+Login.defaultProps = {
+  frontTitle: 'Faça Login',
+  backTitle: 'Cadastre-se',
+  frontButtonText: 'Entrar',
+  backButtonText: 'Cadastrar',
+  frontButtonLoadingText: 'Entrando',
+  backButtonLoadingText: 'Cadastrando',
+  frontOnSubmit: ()=>{console.log("onSubmit");},
+  backOnSubmit: ()=>{console.log("onSubmit");}
 }
 
 export default Login;

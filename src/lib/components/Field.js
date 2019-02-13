@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {asField} from 'informed';
-import {InputStyled, LabelStyled, InputIcon} from './Style';
+import {InputStyled, InputIcon} from './Style';
 
 class Field extends Component {
 
