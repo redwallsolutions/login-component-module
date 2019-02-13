@@ -3,7 +3,8 @@ import {Background, Box, BoxHeader, BoxHeaderImg, FormGroup, SubtleLink} from '.
 import { Form } from 'informed';
 import Field from './Field';
 import RedwallLogoLight from '../assets/img/redwall-logo-light.png';
-import { FaUserAlt , FaLock} from 'react-icons/fa';
+import RedwallLogoDark from '../assets/img/redwall-logo-dark.png';
+import { FaUserAlt , FaLock, FaEnvelope} from 'react-icons/fa';
 import { BoxTitle, ButtonStyled, Text } from './Style';
 import {Link, HashRouter, NavLink, Route} from 'react-router-dom';
 
@@ -54,7 +55,7 @@ class Login extends Component {
                       </FormGroup>
                     </div>
                   </Form>
-                  <Link to="/new">
+                  <Link to='/new'>
                     <Text>
                       Quero criar uma conta!
                     </Text>
@@ -62,8 +63,34 @@ class Login extends Component {
                 </Box>
                 <Box className='back' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
                   <BoxHeader isBack={true}>
-                    <BoxHeaderImg src={RedwallLogoLight}/>
+                    <BoxHeaderImg src={RedwallLogoDark}/>
                   </BoxHeader>
+                  <BoxTitle>
+                    Cadastre-se
+                  </BoxTitle>
+                  <Form>
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                      <FormGroup>
+                        <Field type='text' placeholder='Nome Completo' name='fullName' icon={<FaUserAlt/>}/>
+                      </FormGroup>
+                      <FormGroup>
+                        <Field type='email' placeholder='E-mail' name='email' icon={<FaEnvelope/>}/>
+                      </FormGroup>
+                      <FormGroup>
+                        <Field type='password' placeholder='Senha' name='password' icon={<FaLock/>}/>
+                      </FormGroup>
+                      <FormGroup justify="space-between">
+                        <NavLink to="/">
+                          <SubtleLink>
+                            Voltar para Login
+                          </SubtleLink>
+                        </NavLink>
+                        <ButtonStyled>
+                          Cadastrar
+                        </ButtonStyled>
+                      </FormGroup>
+                    </div>
+                  </Form>
                 </Box>
               </React.Fragment>
             )}/>
