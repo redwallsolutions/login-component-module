@@ -1,15 +1,5 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
 
-function _templateObject22() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  color: rgb(89,89,89);\n  letter-spacing: .8px;\n"]);
-
-  _templateObject22 = function _templateObject22() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject21() {
   var data = _taggedTemplateLiteral(["\n  margin: 3em 0 0 0;\n  font-size: 16px;\n  text-align: center;\n  color: ", ";\n  transition: color .3s;\n  &:hover,&:focus,&:active {\n    color: rgb(89,89,89);\n  }\n"]);
 
@@ -269,6 +259,5 @@ export var InputStyled = styled.input(_templateObject18(), function (props) {
   return props.isFocused ? 3 : 3.5;
 }, primaryColor, primaryColor, primaryColor);
 export var ButtonStyled = styled.button(_templateObject19(), primaryColor, primaryColor, primaryColor);
-export var SubtleText = styled.p(_templateObject20(), primaryColor);
+export var SubtleLink = styled.p(_templateObject20(), primaryColor);
 export var Text = styled.p(_templateObject21(), primaryColor);
-export var NavLinkStyled = styled(NavLink)(_templateObject22());

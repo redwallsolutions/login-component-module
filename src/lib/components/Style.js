@@ -221,7 +221,7 @@ export const ButtonStyled = styled.button`
   }
 `
 
-export const SubtleText = styled.p`
+export const SubtleLink = styled.p`
   opacity: .7;
   font-size: 12px;
   cursor: pointer;
@@ -238,10 +238,4 @@ export const Text = styled.p`
   &:hover,&:focus,&:active {
     color: rgb(89,89,89);
   }
-`
-
-export const NavLinkStyled = styled(NavLink)`
-  text-decoration: none;
-  color: rgb(89,89,89);
-  letter-spacing: .8px;
 `
