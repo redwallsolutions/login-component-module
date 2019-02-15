@@ -14,6 +14,7 @@ export const LoginFonts = createGlobalStyle `
     margin: 0;
     overflow:hidden;
     font-family: Poppins, sans-serif;
+    color: rgb(89,89,89);
   }
 `
 
@@ -179,11 +180,12 @@ export const InputStyled = styled.input`
   width: 100%;
   line-height: 1.5;
   background-clip: padding-box;
-  transition: border-color 0.15s ease-out, text-indent, 0.2s ease-in-out;
+  transition: border-color 0.15s ease-out, text-indent, 0.2s ease-in-out, color .2s;
   box-sizing: border-box;
+  color: rgba(100,100,100);
   &:focus{
     border-color: ${primaryColor};
-
+    color: ${primaryColor};
   }
   &::placeholder {
     color: #6c757d;

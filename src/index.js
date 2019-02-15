@@ -1,13 +1,11 @@
 import React from 'react';
 import { render } from "react-dom";
 
-import {LoginFonts} from './lib';
 import Login from './lib';
 
 const App = () => (
   <React.Fragment>
-    <LoginFonts/>
-    <Login title="Faça Login" buttonText="Logar"/>
+    <Login title="Faça Login" buttonText="Logar" frontOnSubmit={(data)=>{console.log(data)}}/>
   </React.Fragment>
 );
 

@@ -18,14 +18,15 @@ class BoxContent extends Component {
   }
 
   onSubmit = (formObject) => {
+    console.log(formObject);
     this.setState({
       buttonIsLoading: true
     });
     this.props.onSubmit({
       component: {
-        toggleButtonLoading: this.toggleButtonLoading,
-        formObject
-      }
+        toggleButtonLoading: this.toggleButtonLoading
+      },
+      formObject
     })
   }
 
@@ -52,7 +53,7 @@ class BoxContent extends Component {
     (this.props.formGroups &&
     this.props.formGroups.map(formGroup=>(
       <FormGroup key={formGroup.name} justify={formGroup.justify || 'center'}>
-        <Field name={formGroup.name} type={formGroup.type} placeholder={formGroup.placeholder} icon={formGroup.icon}/>
+        <Field field={formGroup.name} type={formGroup.type} placeholder={formGroup.placeholder} icon={formGroup.icon}/>
       </FormGroup>
     ))) ||
     <p style={{textAlign:'center'}}>No content.</p>
