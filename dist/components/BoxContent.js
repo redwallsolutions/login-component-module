@@ -37,15 +37,17 @@ function (_Component) {
     };
 
     _this.onSubmit = function (formObject) {
+      console.log(formObject);
+
       _this.setState({
         buttonIsLoading: true
       });
 
       _this.props.onSubmit({
         component: {
-          toggleButtonLoading: _this.toggleButtonLoading,
-          formObject: formObject
-        }
+          toggleButtonLoading: _this.toggleButtonLoading
+        },
+        formObject: formObject
       });
     };
 
@@ -55,7 +57,7 @@ function (_Component) {
           key: formGroup.name,
           justify: formGroup.justify || 'center'
         }, React.createElement(Field, {
-          name: formGroup.name,
+          field: formGroup.name,
           type: formGroup.type,
           placeholder: formGroup.placeholder,
           icon: formGroup.icon

@@ -31,7 +31,7 @@ function _templateObject19() {
 }
 
 function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n  text-indent: ", "em;\n  outline: 0;\n  padding: 10px;\n  font-size: 15px;\n  background-color: #fff;\n  border:none;\n  border-bottom: 1px solid #eee;\n  display: block;\n  width: 100%;\n  line-height: 1.5;\n  background-clip: padding-box;\n  transition: border-color 0.15s ease-out, text-indent, 0.2s ease-in-out;\n  box-sizing: border-box;\n  &:focus{\n    border-color: ", ";\n\n  }\n  &::placeholder {\n    color: #6c757d;\n    opacity: .5;\n  }\n  &:focus::placeholder {\n    color: ", ";\n  }\n  &:not([value=\"\"]) {\n    border-color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-indent: ", "em;\n  outline: 0;\n  padding: 10px;\n  font-size: 15px;\n  background-color: #fff;\n  border:none;\n  border-bottom: 1px solid #eee;\n  display: block;\n  width: 100%;\n  line-height: 1.5;\n  background-clip: padding-box;\n  transition: border-color 0.15s ease-out, text-indent, 0.2s ease-in-out, color .2s;\n  box-sizing: border-box;\n  color: rgba(100,100,100);\n  &:focus{\n    border-color: ", ";\n    color: ", ";\n  }\n  &::placeholder {\n    color: #6c757d;\n    opacity: .5;\n  }\n  &:focus::placeholder {\n    color: ", ";\n  }\n  &:not([value=\"\"]) {\n    border-color: ", ";\n  }\n"]);
 
   _templateObject18 = function _templateObject18() {
     return data;
@@ -201,7 +201,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: Poppins;\n    src: url(", "), format(\"TrueType\");\n    font-display: fallback;\n  }\n\n  body {\n    padding: 0;\n    margin: 0;\n    overflow:hidden;\n    font-family: Poppins, sans-serif;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: Poppins;\n    src: url(", "), format(\"TrueType\");\n    font-display: fallback;\n  }\n\n  body {\n    padding: 0;\n    margin: 0;\n    overflow:hidden;\n    font-family: Poppins, sans-serif;\n    color: rgb(89,89,89);\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -257,7 +257,7 @@ export var InputIcon = styled.span(_templateObject17(), function (props) {
 });
 export var InputStyled = styled.input(_templateObject18(), function (props) {
   return props.isFocused ? 3 : 3.5;
-}, primaryColor, primaryColor, primaryColor);
+}, primaryColor, primaryColor, primaryColor, primaryColor);
 export var ButtonStyled = styled.button(_templateObject19(), primaryColor, primaryColor, primaryColor);
 export var SubtleLink = styled.p(_templateObject20(), primaryColor);
 export var Text = styled.p(_templateObject21(), primaryColor);
