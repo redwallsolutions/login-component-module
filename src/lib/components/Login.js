@@ -34,16 +34,10 @@ class Login extends Component {
 
   frontOnSubmit = (data) => {
     this.props.frontOnSubmit(data);
-    setTimeout(function () {
-      data.component.toggleButtonLoading();
-    }, 500);
   }
 
   backOnSubmit = (data) => {
     this.props.backOnSubmit(data);
-    setTimeout(function () {
-      data.component.toggleButtonLoading();
-    }, 500);
   }
   render() {
     const {frontTitle, frontButtonText, frontButtonLoadingText,
@@ -143,8 +137,16 @@ Login.defaultProps = {
   backButtonText: 'Cadastrar',
   frontButtonLoadingText: 'Entrando',
   backButtonLoadingText: 'Cadastrando',
-  frontOnSubmit: ()=>{console.log("onSubmit");},
-  backOnSubmit: ()=>{console.log("onSubmit");}
+  frontOnSubmit: (data)=>{
+    setTimeout(function () {
+      data.component.toggleButtonLoading();
+    }, 500);
+  },
+  backOnSubmit: (data)=>{
+    setTimeout(function () {
+      data.component.toggleButtonLoading();
+    }, 500);
+  }
 }
 
 export default Login;

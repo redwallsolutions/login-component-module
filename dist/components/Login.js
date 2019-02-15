@@ -45,18 +45,10 @@ function (_Component) {
 
     _this.frontOnSubmit = function (data) {
       _this.props.frontOnSubmit(data);
-
-      setTimeout(function () {
-        data.component.toggleButtonLoading();
-      }, 500);
     };
 
     _this.backOnSubmit = function (data) {
       _this.props.backOnSubmit(data);
-
-      setTimeout(function () {
-        data.component.toggleButtonLoading();
-      }, 500);
     };
 
     _this.firstTime = true;
@@ -168,11 +160,15 @@ Login.defaultProps = {
   backButtonText: 'Cadastrar',
   frontButtonLoadingText: 'Entrando',
   backButtonLoadingText: 'Cadastrando',
-  frontOnSubmit: function frontOnSubmit() {
-    console.log("onSubmit");
+  frontOnSubmit: function frontOnSubmit(data) {
+    setTimeout(function () {
+      data.component.toggleButtonLoading();
+    }, 500);
   },
-  backOnSubmit: function backOnSubmit() {
-    console.log("onSubmit");
+  backOnSubmit: function backOnSubmit(data) {
+    setTimeout(function () {
+      data.component.toggleButtonLoading();
+    }, 500);
   }
 };
 export default Login;
