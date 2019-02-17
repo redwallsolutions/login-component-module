@@ -6,8 +6,7 @@ import _inherits from "@babel/runtime/helpers/esm/inherits";
 import React, { Component } from 'react';
 import { Form } from 'informed';
 import Field from './Field';
-import { FormGroup, SubtleText, ButtonStyled } from './Style';
-import { FaLock, FaUserAlt } from 'react-icons/fa';
+import { FormGroup, ButtonStyled } from './Style';
 
 var BoxContent =
 /*#__PURE__*/
@@ -37,18 +36,11 @@ function (_Component) {
     };
 
     _this.onSubmit = function (formObject) {
-      console.log(formObject);
-
       _this.setState({
         buttonIsLoading: true
       });
 
-      _this.props.onSubmit({
-        component: {
-          toggleButtonLoading: _this.toggleButtonLoading
-        },
-        formObject: formObject
-      });
+      _this.props.onSubmit(formObject);
     };
 
     _this.renderFormGroups = function () {
@@ -80,7 +72,8 @@ function (_Component) {
           buttonLoadingText = _this$props.buttonLoadingText,
           subtleText = _this$props.subtleText;
       return React.createElement(Form, {
-        onSubmit: this.onSubmit
+        onSubmit: this.onSubmit,
+        getApi: this.props.getFormApi
       }, React.createElement("div", {
         style: {
           display: 'flex',
@@ -107,6 +100,9 @@ BoxContent.defaultProps = {
   buttonLoadingText: 'Submiting',
   onSubmit: function onSubmit() {
     return console.log("submited");
+  },
+  getFormApi: function getFormApi(formApi) {
+    console.log("Form Api ", formApi);
   }
 };
 export default BoxContent;

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Background, Box, BoxHeader, BoxHeaderImg, FormGroup, BoxTitle, ButtonStyled, Text, SubtleLink} from './Style';
-import { Form } from 'informed';
-import Field from './Field';
+import {Background, Box, BoxHeader, BoxHeaderImg, BoxTitle, Text, SubtleLink} from './Style';
 import BoxContent from './BoxContent';
 import RedwallLogoLight from '../assets/img/redwall-logo-light.png';
 import RedwallLogoDark from '../assets/img/redwall-logo-dark.png';
@@ -30,7 +28,11 @@ class LoginContent extends Component {
   isFirstTime = () => this.firstTime
 
   extractFrontFormApi = (formApi) => {
-    this.formApi = formApi
+    this.frontFormApi = formApi
+  }
+
+  extractBackFormApi = (formApi) => {
+    this.backFormApi = formApi
   }
 
   frontOnSubmit = (data) => {
@@ -63,11 +65,22 @@ class LoginContent extends Component {
     }
   }
 
+  clearFrontFaceInput = () => {
+    this.frontFormApi.reset()
+  }
+
+  clearBackFaceInput = () => {
+    this.backFormApi.reset()
+  }
+
   getLoginController = () => ({
     toggleFace: this.toggleFace,
     setFrontFace: this.setFrontFace,
     setBackFace: this.setBackFace,
+    clearFrontFaceInput: this.clearFrontFaceInput,
+    clearBackFaceInput: this.clearBackFaceInput
   })
+
 
   render() {
     const {frontTitle, frontButtonText, frontButtonLoadingText,
@@ -82,6 +95,7 @@ class LoginContent extends Component {
               </BoxHeader>
               <BoxTitle>{frontTitle}</BoxTitle>
               <BoxContent
+                getFormApi={this.extractFrontFormApi}
                 buttonText={frontButtonText}
                 buttonLoadingText={frontButtonLoadingText}
                 onSubmit={this.frontOnSubmit}
@@ -111,6 +125,7 @@ class LoginContent extends Component {
                 {backTitle}
               </BoxTitle>
               <BoxContent
+                getFormApi={this.extractBackFormApi}
                 buttonText={backButtonText}
                 buttonLoadingText={backButtonLoadingText}
                 onSubmit={this.backOnSubmit}

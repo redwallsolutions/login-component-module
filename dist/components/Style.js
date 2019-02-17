@@ -31,7 +31,7 @@ function _templateObject19() {
 }
 
 function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n  text-indent: ", "em;\n  outline: 0;\n  padding: 10px;\n  font-size: 15px;\n  background-color: #fff;\n  border:none;\n  border-bottom: 1px solid #eee;\n  display: block;\n  width: 100%;\n  line-height: 1.5;\n  background-clip: padding-box;\n  transition: border-color 0.15s ease-out, text-indent, 0.2s ease-in-out, color .2s;\n  box-sizing: border-box;\n  color: rgba(100,100,100);\n  &:focus{\n    border-color: ", ";\n    color: ", ";\n  }\n  &::placeholder {\n    color: #6c757d;\n    opacity: .5;\n  }\n  &:focus::placeholder {\n    color: ", ";\n  }\n  &:not([value=\"\"]) {\n    border-color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-indent: ", "em;\n  outline: 0;\n  padding: 10px;\n  font-size: 15px;\n  background-color: #fff;\n  border:none;\n  border-bottom: 1px solid #eee;\n  display: block;\n  width: 100%;\n  line-height: 1.5;\n  background-clip: padding-box;\n  transition: border-color 0.15s ease-out, text-indent, 0.2s ease-in-out, color .2s;\n  box-sizing: border-box;\n  color: rgba(100,100,100);\n  &:focus{\n    border-color: ", ";\n    color: ", ";\n  }\n  &::placeholder {\n    color: #6c757d;\n    opacity: .5;\n  }\n  &:focus::placeholder {\n    color: ", ";\n  }\n  &:not([value=\"\"]) {\n    border-color: rgb(161, 161, 161);\n  }\n\n  &:invalid {\n    box-shadow: none;\n  }\n\n  &:invalid:not(:focus) {\n    border-color: ", ";\n    color: ", "\n  }\n\n"]);
 
   _templateObject18 = function _templateObject18() {
     return data;
@@ -201,7 +201,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: Poppins;\n    src: url(", "), format(\"TrueType\");\n    font-display: fallback;\n  }\n\n  body {\n    padding: 0;\n    margin: 0;\n    overflow:hidden;\n    font-family: Poppins, sans-serif;\n    color: rgb(89,89,89);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: Poppins;\n    src: url(", "), format(\"TrueType\");\n    font-display: fallback;\n  }\n\n  body {\n    padding: 0;\n  &.invalid {\n    border-color: ", "\n  }\n    margin: 0;\n    overflow:hidden;\n    font-family: Poppins, sans-serif;\n    color: rgb(89,89,89);\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -211,11 +211,11 @@ function _templateObject() {
 }
 
 import styled, { createGlobalStyle, keyframes, css } from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import Poppins from '../assets/fonts/Poppins-Regular.ttf';
-export var LoginFonts = createGlobalStyle(_templateObject(), Poppins);
 var backgroundGradientColor = 'linear-gradient(180deg, rgba(10,10,10, 0.96), rgba(30, 30, 30, 0.96))';
 var primaryColor = 'rgb(45, 99, 122)';
+var invalidColor = 'rgb(181, 38, 19)';
+export var LoginFonts = createGlobalStyle(_templateObject(), Poppins, invalidColor);
 export var Background = styled.div(_templateObject2(), backgroundGradientColor);
 var comin = keyframes(_templateObject3());
 var flipFront = keyframes(_templateObject4());
@@ -257,7 +257,7 @@ export var InputIcon = styled.span(_templateObject17(), function (props) {
 });
 export var InputStyled = styled.input(_templateObject18(), function (props) {
   return props.isFocused ? 3 : 3.5;
-}, primaryColor, primaryColor, primaryColor, primaryColor);
+}, primaryColor, primaryColor, primaryColor, invalidColor, invalidColor);
 export var ButtonStyled = styled.button(_templateObject19(), primaryColor, primaryColor, primaryColor);
-export var SubtleLink = styled.p(_templateObject20(), primaryColor);
+export var SubtleLink = styled.a(_templateObject20(), primaryColor);
 export var Text = styled.p(_templateObject21(), primaryColor);

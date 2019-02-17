@@ -4,9 +4,7 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/esm/possibleConst
 import _getPrototypeOf from "@babel/runtime/helpers/esm/getPrototypeOf";
 import _inherits from "@babel/runtime/helpers/esm/inherits";
 import React, { Component } from 'react';
-import { Background, Box, BoxHeader, BoxHeaderImg, FormGroup, BoxTitle, ButtonStyled, Text, SubtleLink } from './Style';
-import { Form } from 'informed';
-import Field from './Field';
+import { Background, Box, BoxHeader, BoxHeaderImg, BoxTitle, Text, SubtleLink } from './Style';
 import BoxContent from './BoxContent';
 import RedwallLogoLight from '../assets/img/redwall-logo-light.png';
 import RedwallLogoDark from '../assets/img/redwall-logo-dark.png';
@@ -38,7 +36,11 @@ function (_Component) {
     };
 
     _this.extractFrontFormApi = function (formApi) {
-      _this.formApi = formApi;
+      _this.frontFormApi = formApi;
+    };
+
+    _this.extractBackFormApi = function (formApi) {
+      _this.backFormApi = formApi;
     };
 
     _this.frontOnSubmit = function (data) {
@@ -55,6 +57,40 @@ function (_Component) {
       });
     };
 
+    _this.setFrontFace = function () {
+      if (_this.state.isBackFace) {
+        _this.setState({
+          isBackFace: false
+        });
+      }
+    };
+
+    _this.setBackFace = function () {
+      if (!_this.state.isBackFace) {
+        _this.setState({
+          isBackFace: true
+        });
+      }
+    };
+
+    _this.clearFrontFaceInput = function () {
+      _this.frontFormApi.reset();
+    };
+
+    _this.clearBackFaceInput = function () {
+      _this.backFormApi.reset();
+    };
+
+    _this.getLoginController = function () {
+      return {
+        toggleFace: _this.toggleFace,
+        setFrontFace: _this.setFrontFace,
+        setBackFace: _this.setBackFace,
+        clearFrontFaceInput: _this.clearFrontFaceInput,
+        clearBackFaceInput: _this.clearBackFaceInput
+      };
+    };
+
     _this.firstTime = true;
     return _this;
   }
@@ -63,6 +99,7 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.firstTime = false;
+      this.props.getLoginController(this.getLoginController());
     }
   }, {
     key: "render",
@@ -83,6 +120,7 @@ function (_Component) {
       }, React.createElement(BoxHeaderImg, {
         src: RedwallLogoLight
       })), React.createElement(BoxTitle, null, frontTitle), React.createElement(BoxContent, {
+        getFormApi: this.extractFrontFormApi,
         buttonText: frontButtonText,
         buttonLoadingText: frontButtonLoadingText,
         onSubmit: this.frontOnSubmit,
@@ -114,6 +152,7 @@ function (_Component) {
       }, React.createElement(BoxHeaderImg, {
         src: RedwallLogoDark
       })), React.createElement(BoxTitle, null, backTitle), React.createElement(BoxContent, {
+        getFormApi: this.extractBackFormApi,
         buttonText: backButtonText,
         buttonLoadingText: backButtonLoadingText,
         onSubmit: this.backOnSubmit,
@@ -160,6 +199,9 @@ LoginContent.defaultProps = {
       data.component.toggleButtonLoading();
     }, 500);
   },
-  isBackFace: false
+  isBackFace: false,
+  getLoginController: function getLoginController(loginController) {
+    console.log("Login controller ".concat(loginController));
+  }
 };
 export default LoginContent;

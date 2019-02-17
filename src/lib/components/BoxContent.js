@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Form} from 'informed';
 import Field from './Field';
-import {FormGroup,SubtleText,ButtonStyled} from './Style';
-import { FaLock, FaUserAlt } from 'react-icons/fa';
+import {FormGroup,ButtonStyled} from './Style';
 
 class BoxContent extends Component {
 
@@ -29,7 +28,8 @@ class BoxContent extends Component {
     const {buttonText, buttonLoadingText, subtleText} = this.props;
     return (
       <Form
-        onSubmit={this.onSubmit}>
+        onSubmit={this.onSubmit}
+        getApi={this.props.getFormApi}>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           {this.renderFormGroups()}
           <FormGroup justify='space-between' style={{marginTop: '1em'}}>
@@ -58,13 +58,15 @@ class BoxContent extends Component {
 BoxContent.propTypes = {
   buttonText: PropTypes.string,
   buttonLoadingText: PropTypes.string,
-  onSubmit: PropTypes.func
+  onSubmit: PropTypes.func,
+  getFormApi: PropTypes.func
 }
 
 BoxContent.defaultProps = {
   buttonText: 'Submit',
   buttonLoadingText: 'Submiting',
-  onSubmit:()=>console.log("submited")
+  onSubmit:()=>console.log("submited"),
+  getFormApi: (formApi)=>{console.log("Form Api ", formApi);}
 }
 
 export default BoxContent;

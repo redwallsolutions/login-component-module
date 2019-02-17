@@ -1,6 +1,9 @@
 import styled, {createGlobalStyle, keyframes, css} from 'styled-components';
-import {NavLink} from 'react-router-dom';
 import Poppins from '../assets/fonts/Poppins-Regular.ttf';
+
+const backgroundGradientColor = 'linear-gradient(180deg, rgba(10,10,10, 0.96), rgba(30, 30, 30, 0.96))';
+const primaryColor = 'rgb(45, 99, 122)'
+const invalidColor = 'rgb(181, 38, 19)'
 
 export const LoginFonts = createGlobalStyle `
   @font-face {
@@ -11,15 +14,15 @@ export const LoginFonts = createGlobalStyle `
 
   body {
     padding: 0;
+  &.invalid {
+    border-color: ${invalidColor}
+  }
     margin: 0;
     overflow:hidden;
     font-family: Poppins, sans-serif;
     color: rgb(89,89,89);
   }
 `
-
-const backgroundGradientColor = 'linear-gradient(180deg, rgba(10,10,10, 0.96), rgba(30, 30, 30, 0.96))';
-const primaryColor = 'rgb(45, 99, 122)';
 
 export const Background = styled.div `
   background: ${backgroundGradientColor};
@@ -195,8 +198,18 @@ export const InputStyled = styled.input`
     color: ${primaryColor};
   }
   &:not([value=""]) {
-    border-color: ${primaryColor};
+    border-color: rgb(161, 161, 161);
   }
+
+  &:invalid {
+    box-shadow: none;
+  }
+
+  &:invalid:not(:focus) {
+    border-color: ${invalidColor};
+    color: ${invalidColor}
+  }
+
 `
 export const ButtonStyled = styled.button`
   padding: 10px 35px;
@@ -223,7 +236,7 @@ export const ButtonStyled = styled.button`
   }
 `
 
-export const SubtleLink = styled.p`
+export const SubtleLink = styled.a`
   opacity: .7;
   font-size: 12px;
   cursor: pointer;

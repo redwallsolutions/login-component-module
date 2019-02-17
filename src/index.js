@@ -19,14 +19,27 @@ const changeToBackFaceAfter3Seconds = () => {
   setTimeout(function () {
     localLoginController.controller.setBackFace();
     changeToFrontFaceAfter3Seconds()
-  }, 5000);
+  }, 3000);
 }
 const changeToFrontFaceAfter3Seconds = () => {
   setTimeout(function () {
     localLoginController.controller.setFrontFace();
-  }, 5000);
+    resetFrontAfter3Seconds()
+  }, 3000);
 }
 
-changeToBackFaceAfter3Seconds()
+const resetFrontAfter3Seconds = () => {
+  setTimeout(function () {
+    localLoginController.controller.clearFrontFaceInput()
+    resetBackAfter3Seconds()
+  }, 3000);
+}
+
+const resetBackAfter3Seconds = () => {
+  setTimeout(function () {
+    localLoginController.controller.clearBackFaceInput()
+  }, 3000);
+}
+// changeToBackFaceAfter3Seconds()
 
 render(<App />, document.getElementById("root"));
