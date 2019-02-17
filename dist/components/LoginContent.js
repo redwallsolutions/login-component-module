@@ -43,6 +43,14 @@ function (_Component) {
       _this.backFormApi = formApi;
     };
 
+    _this.extractFrontBoxController = function (boxController) {
+      _this.frontBoxController = boxController;
+    };
+
+    _this.extractBackBoxController = function (boxController) {
+      _this.backBoxController = boxController;
+    };
+
     _this.frontOnSubmit = function (data) {
       _this.props.frontOnSubmit(data);
     };
@@ -73,6 +81,14 @@ function (_Component) {
       }
     };
 
+    _this.toggleFrontFaceButtonLoading = function () {
+      _this.frontBoxController.toggleButtonLoading();
+    };
+
+    _this.toggleBackFaceButtonLoading = function () {
+      _this.backBoxController.toggleButtonLoading();
+    };
+
     _this.clearFrontFaceInput = function () {
       _this.frontFormApi.reset();
     };
@@ -81,13 +97,15 @@ function (_Component) {
       _this.backFormApi.reset();
     };
 
-    _this.getLoginController = function () {
+    _this.exposeLoginController = function () {
       return {
         toggleFace: _this.toggleFace,
         setFrontFace: _this.setFrontFace,
         setBackFace: _this.setBackFace,
         clearFrontFaceInput: _this.clearFrontFaceInput,
-        clearBackFaceInput: _this.clearBackFaceInput
+        clearBackFaceInput: _this.clearBackFaceInput,
+        toggleFrontFaceButtonLoading: _this.toggleFrontFaceButtonLoading,
+        toggleBackFaceButtonLoading: _this.toggleBackFaceButtonLoading
       };
     };
 
@@ -99,7 +117,7 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.firstTime = false;
-      this.props.getLoginController(this.getLoginController());
+      this.props.getLoginController(this.exposeLoginController());
     }
   }, {
     key: "render",
@@ -120,6 +138,7 @@ function (_Component) {
       }, React.createElement(BoxHeaderImg, {
         src: RedwallLogoLight
       })), React.createElement(BoxTitle, null, frontTitle), React.createElement(BoxContent, {
+        getBoxController: this.extractFrontBoxController,
         getFormApi: this.extractFrontFormApi,
         buttonText: frontButtonText,
         buttonLoadingText: frontButtonLoadingText,
@@ -152,6 +171,7 @@ function (_Component) {
       }, React.createElement(BoxHeaderImg, {
         src: RedwallLogoDark
       })), React.createElement(BoxTitle, null, backTitle), React.createElement(BoxContent, {
+        getBoxController: this.extractBackBoxController,
         getFormApi: this.extractBackFormApi,
         buttonText: backButtonText,
         buttonLoadingText: backButtonLoadingText,

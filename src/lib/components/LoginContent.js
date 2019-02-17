@@ -20,7 +20,7 @@ class LoginContent extends Component {
 
   componentDidMount() {
     this.firstTime = false
-    this.props.getLoginController(this.getLoginController())
+    this.props.getLoginController(this.exposeLoginController())
   }
 
   isBack = () => this.state.isBackFace
@@ -33,6 +33,14 @@ class LoginContent extends Component {
 
   extractBackFormApi = (formApi) => {
     this.backFormApi = formApi
+  }
+
+  extractFrontBoxController = (boxController) =>{
+    this.frontBoxController = boxController
+  }
+
+  extractBackBoxController = (boxController) =>{
+    this.backBoxController = boxController
   }
 
   frontOnSubmit = (data) => {
@@ -65,6 +73,14 @@ class LoginContent extends Component {
     }
   }
 
+  toggleFrontFaceButtonLoading = () => {
+    this.frontBoxController.toggleButtonLoading()
+  }
+
+  toggleBackFaceButtonLoading = () => {
+    this.backBoxController.toggleButtonLoading()
+  }
+
   clearFrontFaceInput = () => {
     this.frontFormApi.reset()
   }
@@ -73,12 +89,15 @@ class LoginContent extends Component {
     this.backFormApi.reset()
   }
 
-  getLoginController = () => ({
+  exposeLoginController = () => ({
     toggleFace: this.toggleFace,
     setFrontFace: this.setFrontFace,
     setBackFace: this.setBackFace,
     clearFrontFaceInput: this.clearFrontFaceInput,
-    clearBackFaceInput: this.clearBackFaceInput
+    clearBackFaceInput: this.clearBackFaceInput,
+    toggleFrontFaceButtonLoading: this.toggleFrontFaceButtonLoading,
+    toggleBackFaceButtonLoading: this.toggleBackFaceButtonLoading
+
   })
 
 
@@ -95,6 +114,7 @@ class LoginContent extends Component {
               </BoxHeader>
               <BoxTitle>{frontTitle}</BoxTitle>
               <BoxContent
+                getBoxController={this.extractFrontBoxController}
                 getFormApi={this.extractFrontFormApi}
                 buttonText={frontButtonText}
                 buttonLoadingText={frontButtonLoadingText}
@@ -125,6 +145,7 @@ class LoginContent extends Component {
                 {backTitle}
               </BoxTitle>
               <BoxContent
+                getBoxController={this.extractBackBoxController}
                 getFormApi={this.extractBackFormApi}
                 buttonText={backButtonText}
                 buttonLoadingText={backButtonLoadingText}

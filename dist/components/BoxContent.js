@@ -43,6 +43,12 @@ function (_Component) {
       _this.props.onSubmit(formObject);
     };
 
+    _this.exposeBoxController = function () {
+      return {
+        toggleButtonLoading: _this.toggleButtonLoading
+      };
+    };
+
     _this.renderFormGroups = function () {
       return _this.props.formGroups && _this.props.formGroups.map(function (formGroup) {
         return React.createElement(FormGroup, {
@@ -65,6 +71,11 @@ function (_Component) {
   }
 
   _createClass(BoxContent, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getBoxController(this.exposeBoxController());
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,

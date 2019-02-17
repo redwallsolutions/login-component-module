@@ -6,7 +6,6 @@ import Login from './lib';
 const localLoginController = {}
 const extractLoginController = (loginController) => {
   localLoginController.controller = loginController;
-  console.log(localLoginController);
 }
 
 const App = () => (
@@ -38,8 +37,21 @@ const resetFrontAfter3Seconds = () => {
 const resetBackAfter3Seconds = () => {
   setTimeout(function () {
     localLoginController.controller.clearBackFaceInput()
+    toggleFrontFaceButtonLoadingAfter3Seconds()
   }, 3000);
 }
-// changeToBackFaceAfter3Seconds()
+
+const toggleFrontFaceButtonLoadingAfter3Seconds = () => {
+  setTimeout(function () {
+    localLoginController.controller.toggleFrontFaceButtonLoading()
+    toggleFrontBackButtonLoadingAfter3Seconds()
+  }, 3000);
+}
+const toggleFrontBackButtonLoadingAfter3Seconds = () => {
+  setTimeout(function () {
+    localLoginController.controller.toggleBackFaceButtonLoading()
+  }, 3000);
+}
+changeToBackFaceAfter3Seconds()
 
 render(<App />, document.getElementById("root"));

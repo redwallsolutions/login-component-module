@@ -6,6 +6,10 @@ import {FormGroup,ButtonStyled} from './Style';
 
 class BoxContent extends Component {
 
+  componentDidMount() {
+    this.props.getBoxController(this.exposeBoxController());
+  }
+
   state = {
     buttonIsLoading: false
   }
@@ -23,6 +27,9 @@ class BoxContent extends Component {
     this.props.onSubmit(formObject)
   }
 
+  exposeBoxController = () => ({
+    toggleButtonLoading: this.toggleButtonLoading
+  })
 
   render() {
     const {buttonText, buttonLoadingText, subtleText} = this.props;
