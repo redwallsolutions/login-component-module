@@ -18,16 +18,10 @@ class BoxContent extends Component {
   }
 
   onSubmit = (formObject) => {
-    console.log(formObject);
     this.setState({
       buttonIsLoading: true
     });
-    this.props.onSubmit({
-      component: {
-        toggleButtonLoading: this.toggleButtonLoading
-      },
-      formObject
-    })
+    this.props.onSubmit(formObject)
   }
 
 

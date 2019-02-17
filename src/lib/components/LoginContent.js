@@ -22,6 +22,7 @@ class LoginContent extends Component {
 
   componentDidMount() {
     this.firstTime = false
+    this.props.getLoginController(this.getLoginController())
   }
 
   isBack = () => this.state.isBackFace
@@ -45,6 +46,29 @@ class LoginContent extends Component {
       isBackFace: !this.state.isBackFace
     });
   }
+
+  setFrontFace = () => {
+    if(this.state.isBackFace) {
+      this.setState({
+        isBackFace: false
+      });
+    }
+  }
+
+  setBackFace = () => {
+    if(!this.state.isBackFace) {
+      this.setState({
+        isBackFace:true
+      });
+    }
+  }
+
+  getLoginController = () => ({
+    toggleFace: this.toggleFace,
+    setFrontFace: this.setFrontFace,
+    setBackFace: this.setBackFace,
+  })
+
   render() {
     const {frontTitle, frontButtonText, frontButtonLoadingText,
           backTitle, backButtonText, backButtonLoadingText} = this.props;
@@ -127,7 +151,8 @@ LoginContent.propTypes = {
   frontButtonLoadingText: PropTypes.string,
   backButtonLoadingText: PropTypes.string,
   frontOnSubmit: PropTypes.func,
-  isBackFace: PropTypes.bool
+  isBackFace: PropTypes.bool,
+  getLoginController: PropTypes.func
 }
 
 LoginContent.defaultProps = {
@@ -147,7 +172,10 @@ LoginContent.defaultProps = {
       data.component.toggleButtonLoading();
     }, 500);
   },
-  isBackFace: false
+  isBackFace: false,
+  getLoginController: (loginController) => {
+    console.log(`Login controller ${loginController}`);
+  }
 }
 
 export default LoginContent;
