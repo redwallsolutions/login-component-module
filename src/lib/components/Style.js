@@ -127,6 +127,14 @@ export const Box = styled.div `
     ${props=> (props.isFirstTime && props.isBack) && flipFrontAnimationProps}
   }
 
+  @media (max-width: 769px){
+    width: 70vw;
+  }
+
+  @media (max-width: 415px) {
+    width: 100vw;
+  }
+
 `
 
 export const BoxHeader = styled.div `
@@ -140,6 +148,10 @@ export const BoxHeader = styled.div `
 
 export const BoxHeaderImg = styled.img `
   height: 40%;
+
+  @media (max-width: 769px) {
+    height: 30%;
+  }
 `
 
 export const BoxTitle = styled.h2 `

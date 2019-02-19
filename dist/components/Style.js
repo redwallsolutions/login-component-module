@@ -71,7 +71,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  height: 40%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 40%;\n\n  @media (max-width: 769px) {\n    height: 30%;\n  }\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -91,7 +91,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.1), 0 0 150px 0 rgba(0,0,0,.93);\n  background-color: white;\n  width: 35vw;\n  height: 100vh;\n  color: rgb(89, 89, 89);\n  z-index: 3;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.1), 0 0 150px 0 rgba(0,0,0,.93);\n  background-color: white;\n  width: 35vw;\n  height: 100vh;\n  color: rgb(89, 89, 89);\n  z-index: 3;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n  @media (max-width: 769px){\n    width: 70vw;\n  }\n\n  @media (max-width: 415px) {\n    width: 100vw;\n  }\n\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;

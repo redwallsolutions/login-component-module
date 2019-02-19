@@ -52,6 +52,6 @@ const toggleFrontBackButtonLoadingAfter3Seconds = () => {
     localLoginController.controller.toggleBackFaceButtonLoading()
   }, 3000);
 }
-changeToBackFaceAfter3Seconds()
+// changeToBackFaceAfter3Seconds()
 
 render(<App />, document.getElementById("root"));
