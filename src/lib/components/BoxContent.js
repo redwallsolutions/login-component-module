@@ -36,7 +36,8 @@ class BoxContent extends Component {
     return (
       <Form
         onSubmit={this.onSubmit}
-        getApi={this.props.getFormApi}>
+        getApi={this.props.getFormApi}
+        autocomplete='off'>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           {this.renderFormGroups()}
           <FormGroup justify='space-between' style={{marginTop: '1em'}}>
