@@ -74,21 +74,30 @@ const flipFrontAnimationPropsReverse = css`
 const flipBack = keyframes`
   0% {
     transform: perspective(50em) scale(.7) rotateY(-180deg);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
   }
   100% {
     transform: perspective(50em) scale(1) rotateY(0deg);
+    opacity: 1;
   }
 `
 
 const flipBackReverse = keyframes`
   0% {
     transform: rotateY(0deg);
+    opacity: 1;
   }
   50% {
     transform: perspective(50em) scale(.7) rotateY(-170deg);
+    opacity: 1;
   }
   100% {
     transform: perspective(50em) scale(1) rotateY(-170deg);
+    opacity: 0;
 }
 `
 
@@ -104,7 +113,7 @@ export const Box = styled.div `
   background-color: white;
   width: 35vw;
   height: 100%;
-  z-index: 3;
+  z-index: 1;
   position: absolute;
   &.front,&.back {
     backface-visibility: hidden;
@@ -116,6 +125,7 @@ export const Box = styled.div `
     ${props=>props.isBack && !props.isFirstTime && flipBackAnimationProps};
     ${props=>!props.isBack && !props.isFirstTime && flipBackAnimationPropsReverse};
     ${props=>props.isBack && props.isFirstTime && flipBackAnimationProps};
+    opacity: 0;
   }
 
   &.front {

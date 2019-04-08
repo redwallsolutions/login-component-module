@@ -91,7 +91,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.1), 0 0 150px 0 rgba(0,0,0,.93);\n  background-color: white;\n  width: 35vw;\n  height: 100%;\n  z-index: 3;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n  @media (max-width: 768px){\n    width: 70vw;\n  }\n\n  @media (max-width: 415px) {\n    width: 100vw;\n  }\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.1), 0 0 150px 0 rgba(0,0,0,.93);\n  background-color: white;\n  width: 35vw;\n  height: 100%;\n  z-index: 1;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n    opacity: 0;\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n  @media (max-width: 768px){\n    width: 70vw;\n  }\n\n  @media (max-width: 415px) {\n    width: 100vw;\n  }\n\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -121,7 +121,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0deg);\n  }\n  50% {\n    transform: perspective(50em) scale(.7) rotateY(-170deg);\n  }\n  100% {\n    transform: perspective(50em) scale(1) rotateY(-170deg);\n}\n"]);
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0deg);\n    opacity: 1;\n  }\n  50% {\n    transform: perspective(50em) scale(.7) rotateY(-170deg);\n    opacity: 1;\n  }\n  100% {\n    transform: perspective(50em) scale(1) rotateY(-170deg);\n    opacity: 0;\n}\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -131,7 +131,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: perspective(50em) scale(.7) rotateY(-180deg);\n  }\n  100% {\n    transform: perspective(50em) scale(1) rotateY(0deg);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: perspective(50em) scale(.7) rotateY(-180deg);\n    opacity: 0;\n  }\n\n  50% {\n    opacity: 1;\n  }\n  100% {\n    transform: perspective(50em) scale(1) rotateY(0deg);\n    opacity: 1;\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Form} from 'informed';
 import {InputField} from 'form-component-module';
 import {FormGroup,ButtonStyled} from './Style';
+import Button from 'button-component-module';
 
 class BoxContent extends Component {
 
@@ -37,14 +38,14 @@ class BoxContent extends Component {
       <Form
         onSubmit={this.onSubmit}
         getApi={this.props.getFormApi}
-      autocomplete='off'>
+      autoComplete='off'>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           {this.renderFormGroups()}
-          <FormGroup justify='space-between' style={{marginTop: '1em'}}>
+          <FormGroup justify='space-between'>
             {subtleText}
-            <ButtonStyled disabled={this.state.buttonIsLoading} type='submit'>
+            <Button loading={this.state.buttonIsLoading} appearance='primary' size='large' type='submit'>
               {buttonText}
-            </ButtonStyled>
+            </Button>
           </FormGroup>
         </div>
       </Form>

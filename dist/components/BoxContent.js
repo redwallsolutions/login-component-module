@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { Form } from 'informed';
 import { InputField } from 'form-component-module';
 import { FormGroup, ButtonStyled } from './Style';
+import Button from 'button-component-module';
 
 var BoxContent =
 /*#__PURE__*/
@@ -85,7 +86,7 @@ function (_Component) {
       return React.createElement(Form, {
         onSubmit: this.onSubmit,
         getApi: this.props.getFormApi,
-        autocomplete: "off"
+        autoComplete: "off"
       }, React.createElement("div", {
         style: {
           display: 'flex',
@@ -93,12 +94,11 @@ function (_Component) {
           alignItems: 'center'
         }
       }, this.renderFormGroups(), React.createElement(FormGroup, {
-        justify: "space-between",
-        style: {
-          marginTop: '1em'
-        }
-      }, subtleText, React.createElement(ButtonStyled, {
-        disabled: this.state.buttonIsLoading,
+        justify: "space-between"
+      }, subtleText, React.createElement(Button, {
+        loading: this.state.buttonIsLoading,
+        appearance: "primary",
+        size: "large",
         type: "submit"
       }, buttonText))));
     }

@@ -1,6 +1,6 @@
 {
   "name": "login-component-module",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -29,6 +29,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "button-component-module": "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/button-component-module",
     "form-component-module": "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/form-component-module",
     "informed": "^2.0.1",
     "react-icons": "^3.3.0",
