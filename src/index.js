@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from "react-dom";
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Login from './lib';
 
 const ResetCSS = createGlobalStyle`
@@ -18,7 +18,9 @@ const extractLoginController = (loginController) => {
 const App = () => (
   <React.Fragment>
     <ResetCSS/>
-    <Login title="Faça Login" buttonText="Logar" frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController}/>
+    <ThemeProvider theme={{mode: 'dark'}}>
+      <Login title="Faça Login" buttonText="Logar" frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController}/>
+    </ThemeProvider>
   </React.Fragment>
 );
 
