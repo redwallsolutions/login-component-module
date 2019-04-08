@@ -5,7 +5,7 @@ import _getPrototypeOf from "@babel/runtime/helpers/esm/getPrototypeOf";
 import _inherits from "@babel/runtime/helpers/esm/inherits";
 import React, { Component } from 'react';
 import { Form } from 'informed';
-import Field from './Field';
+import { InputField } from 'form-component-module';
 import { FormGroup, ButtonStyled } from './Style';
 
 var BoxContent =
@@ -54,7 +54,7 @@ function (_Component) {
         return React.createElement(FormGroup, {
           key: formGroup.name,
           justify: formGroup.justify || 'center'
-        }, React.createElement(Field, {
+        }, React.createElement(InputField, {
           field: formGroup.name,
           type: formGroup.type,
           placeholder: formGroup.placeholder,
@@ -100,7 +100,7 @@ function (_Component) {
       }, subtleText, React.createElement(ButtonStyled, {
         disabled: this.state.buttonIsLoading,
         type: "submit"
-      }, this.state.buttonIsLoading ? buttonLoadingText + '...' : buttonText))));
+      }, buttonText))));
     }
   }]);
 

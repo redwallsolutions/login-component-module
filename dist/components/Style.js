@@ -51,7 +51,7 @@ function _templateObject17() {
 }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 70%;\n  justify-content: ", ";\n  align-items: center;\n  margin-bottom: .5em;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 70%;\n  justify-content: ", ";\n  align-items: center;\n"]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -61,7 +61,7 @@ function _templateObject16() {
 }
 
 function _templateObject15() {
-  var data = _taggedTemplateLiteral(["\n  color: rgba(94, 94, 94, 0.89);\n  text-align: center;\n  margin: 3em 0 1.4em 0;\n  ::after {\n    content: \".\";\n    color: ", ";\n    font-size: 40px;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: rgba(94, 94, 94, 0.89);\n  text-align: center;\n  ::after {\n    content: \".\";\n    color: ", ";\n    font-size: 40px;\n  }\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -81,7 +81,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  box-shadow: 0 0 80px 0 rgba(0,0,0,0.2) inset;\n  height: 30%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  box-shadow: 0 0 80px 0 rgba(0,0,0,0.2) inset;\n  height: 28%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -91,7 +91,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.1), 0 0 150px 0 rgba(0,0,0,.93);\n  background-color: white;\n  width: 35vw;\n  height: 100vh;\n  color: rgb(89, 89, 89);\n  z-index: 3;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n  @media (max-width: 769px){\n    width: 70vw;\n  }\n\n  @media (max-width: 415px) {\n    width: 100vw;\n  }\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.1), 0 0 150px 0 rgba(0,0,0,.93);\n  background-color: white;\n  width: 35vw;\n  height: 100%;\n  z-index: 3;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n  @media (max-width: 768px){\n    width: 70vw;\n  }\n\n  @media (max-width: 415px) {\n    width: 100vw;\n  }\n\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -191,7 +191,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  box-shadow: 0 0 200px 0px rgb(0,0,0) inset;\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  background: ", ";\n  box-shadow: 0 0 200px 0px rgb(0,0,0) inset;\n  min-height: 100vh;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -201,7 +201,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: Poppins;\n    src: url(", "), format(\"TrueType\");\n    font-display: fallback;\n  }\n\n  body {\n    padding: 0;\n  &.invalid {\n    border-color: ", "\n  }\n    margin: 0;\n    overflow:hidden;\n    font-family: Poppins, sans-serif;\n    color: rgb(89,89,89);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: Poppins;\n    src: url(", "), format(\"TrueType\");\n    font-display: fallback;\n  }\n\n  .login-component-module {\n    font-family: Poppins, sans-serif;\n    color: rgb(89,89,89);\n  }\n\n  .login-component-module * {\n    box-sizing: border-box;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -215,7 +215,7 @@ import Poppins from '../assets/fonts/Poppins-Regular.ttf';
 var backgroundGradientColor = 'linear-gradient(180deg, rgba(10,10,10, 0.96), rgba(30, 30, 30, 0.96))';
 var primaryColor = 'rgb(45, 99, 122)';
 var invalidColor = 'rgb(181, 38, 19)';
-export var LoginFonts = createGlobalStyle(_templateObject(), Poppins, invalidColor);
+export var LoginFonts = createGlobalStyle(_templateObject(), Poppins);
 export var Background = styled.div(_templateObject2(), backgroundGradientColor);
 var comin = keyframes(_templateObject3());
 var flipFront = keyframes(_templateObject4());

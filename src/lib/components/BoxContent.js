@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Form} from 'informed';
-import Field from './Field';
+import {InputField} from 'form-component-module';
 import {FormGroup,ButtonStyled} from './Style';
 
 class BoxContent extends Component {
@@ -37,13 +37,13 @@ class BoxContent extends Component {
       <Form
         onSubmit={this.onSubmit}
         getApi={this.props.getFormApi}
-        autocomplete='off'>
+      autocomplete='off'>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           {this.renderFormGroups()}
           <FormGroup justify='space-between' style={{marginTop: '1em'}}>
             {subtleText}
             <ButtonStyled disabled={this.state.buttonIsLoading} type='submit'>
-              {this.state.buttonIsLoading ? (buttonLoadingText + '...') :buttonText}
+              {buttonText}
             </ButtonStyled>
           </FormGroup>
         </div>
@@ -55,7 +55,7 @@ class BoxContent extends Component {
     (this.props.formGroups &&
     this.props.formGroups.map(formGroup=>(
       <FormGroup key={formGroup.name} justify={formGroup.justify || 'center'}>
-        <Field field={formGroup.name} type={formGroup.type} placeholder={formGroup.placeholder} icon={formGroup.icon}/>
+        <InputField field={formGroup.name} type={formGroup.type} placeholder={formGroup.placeholder} icon={formGroup.icon}/>
       </FormGroup>
     ))) ||
     <p style={{textAlign:'center'}}>No content.</p>

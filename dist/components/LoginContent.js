@@ -129,7 +129,9 @@ function (_Component) {
           backTitle = _this$props.backTitle,
           backButtonText = _this$props.backButtonText,
           backButtonLoadingText = _this$props.backButtonLoadingText;
-      return React.createElement(React.Fragment, null, React.createElement(Background, null, React.createElement(React.Fragment, null, React.createElement(Box, {
+      return React.createElement(React.Fragment, null, React.createElement(Background, {
+        className: "login-component-module"
+      }, React.createElement(React.Fragment, null, React.createElement(Box, {
         className: "front",
         isBack: this.isBack(),
         isFirstTime: this.isFirstTime()

@@ -1,7 +1,14 @@
 import React from 'react';
 import { render } from "react-dom";
-
+import { createGlobalStyle } from 'styled-components';
 import Login from './lib';
+
+const ResetCSS = createGlobalStyle`
+  body {
+    padding: 0;
+    margin: 0;
+  }
+`
 
 const localLoginController = {}
 const extractLoginController = (loginController) => {
@@ -10,6 +17,7 @@ const extractLoginController = (loginController) => {
 
 const App = () => (
   <React.Fragment>
+    <ResetCSS/>
     <Login title="Faça Login" buttonText="Logar" frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController}/>
   </React.Fragment>
 );

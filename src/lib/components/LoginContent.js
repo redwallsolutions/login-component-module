@@ -106,7 +106,7 @@ class LoginContent extends Component {
           backTitle, backButtonText, backButtonLoadingText} = this.props;
     return (
       <React.Fragment>
-        <Background>
+        <Background className='login-component-module'>
           <React.Fragment>
             <Box className='front' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
               <BoxHeader isBack={false}>

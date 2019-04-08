@@ -12,23 +12,22 @@ export const LoginFonts = createGlobalStyle `
     font-display: fallback;
   }
 
-  body {
-    padding: 0;
-  &.invalid {
-    border-color: ${invalidColor}
-  }
-    margin: 0;
-    overflow:hidden;
+  .login-component-module {
     font-family: Poppins, sans-serif;
     color: rgb(89,89,89);
+  }
+
+  .login-component-module * {
+    box-sizing: border-box;
   }
 `
 
 export const Background = styled.div `
+  position: relative;
   background: ${backgroundGradientColor};
   box-shadow: 0 0 200px 0px rgb(0,0,0) inset;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,8 +103,7 @@ export const Box = styled.div `
   box-shadow: 0 0 0.5px 0 rgba(0,0,0,.1), 0 0 150px 0 rgba(0,0,0,.93);
   background-color: white;
   width: 35vw;
-  height: 100vh;
-  color: rgb(89, 89, 89);
+  height: 100%;
   z-index: 3;
   position: absolute;
   &.front,&.back {
@@ -127,7 +125,7 @@ export const Box = styled.div `
     ${props=> (props.isFirstTime && props.isBack) && flipFrontAnimationProps}
   }
 
-  @media (max-width: 769px){
+  @media (max-width: 768px){
     width: 70vw;
   }
 
@@ -140,7 +138,7 @@ export const Box = styled.div `
 export const BoxHeader = styled.div `
   background-color: ${props=> props.isBack ? 'white' : '#E30613'};
   box-shadow: 0 0 80px 0 rgba(0,0,0,0.2) inset;
-  height: 30%;
+  height: 28%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,7 +155,6 @@ export const BoxHeaderImg = styled.img `
 export const BoxTitle = styled.h2 `
   color: rgba(94, 94, 94, 0.89);
   text-align: center;
-  margin: 3em 0 1.4em 0;
   ::after {
     content: ".";
     color: ${primaryColor};
@@ -169,7 +166,6 @@ export const FormGroup = styled.div`
   width: 70%;
   justify-content: ${props => props.justify};
   align-items: center;
-  margin-bottom: .5em;
 `
 
 FormGroup.defaultProps = {
