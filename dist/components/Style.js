@@ -1,17 +1,7 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
 
-function _templateObject21() {
-  var data = _taggedTemplateLiteral(["\n  margin: 3em 0 0 0;\n  font-size: 16px;\n  text-align: center;\n  color: ", ";\n  transition: color .3s;\n  &:hover,&:focus,&:active {\n    color: rgb(89,89,89);\n  }\n"]);
-
-  _templateObject21 = function _templateObject21() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject20() {
-  var data = _taggedTemplateLiteral(["\n  opacity: .7;\n  font-size: 12px;\n  cursor: pointer;\n  &:active,&:focus,&:hover {\n    color: ", "\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin: 3em 0 0 0;\n  font-size: 16px;\n  text-align: center;\n  color: ", ";\n  transition: color .3s;\n  &:hover,&:focus,&:active {\n    color: rgb(89,89,89);\n  }\n"]);
 
   _templateObject20 = function _templateObject20() {
     return data;
@@ -21,7 +11,7 @@ function _templateObject20() {
 }
 
 function _templateObject19() {
-  var data = _taggedTemplateLiteral(["\n  padding: 10px 35px;\n  outline: no;\n  border: 1px solid ", ";\n  border-radius: 6px;\n  font-size: 17px;\n  background-color: transparent;\n  transition: background .2s, color .2s, border .1s;\n  cursor: pointer;\n  color: ", ";\n  transition: opacity .5s, transform .2s ease-in-out;\n  &:hover,:active,:focus {\n    color: #fff;\n    background-color: ", ";\n    border-color: transparent;\n    box-shadow: 0 0 30px -3px rgba(0,0,0,0.3) inset;\n  }\n  &:active {\n    transform: scale(.98);\n  }\n  &:disabled {\n    opacity: .5;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  opacity: .7;\n  font-size: 12px;\n  cursor: pointer;\n  &:active,&:focus,&:hover {\n    color: ", "\n  }\n"]);
 
   _templateObject19 = function _templateObject19() {
     return data;
@@ -258,6 +248,5 @@ export var InputIcon = styled.span(_templateObject17(), function (props) {
 export var InputStyled = styled.input(_templateObject18(), function (props) {
   return props.isFocused ? 3 : 3.5;
 }, primaryColor, primaryColor, primaryColor, invalidColor, invalidColor);
-export var ButtonStyled = styled.button(_templateObject19(), primaryColor, primaryColor, primaryColor);
-export var SubtleLink = styled.a(_templateObject20(), primaryColor);
-export var Text = styled.p(_templateObject21(), primaryColor);
+export var SubtleLink = styled.a(_templateObject19(), primaryColor);
+export var Text = styled.p(_templateObject20(), primaryColor);

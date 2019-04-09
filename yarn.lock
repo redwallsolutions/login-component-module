@@ -3126,7 +3126,7 @@ debug@^3.1.0, debug@^3.2.5:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
+debug@^4.0.1, debug@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   integrity sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
@@ -4263,8 +4263,8 @@ fork-ts-checker-webpack-plugin-alt@0.4.14:
     tapable "^1.0.0"
 
 "form-component-module@https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/form-component-module":
-  version "1.7.1"
-  resolved "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/form-component-module#891e0bc1230e9d3c301c9020d507de0be42ba9bc"
+  version "1.7.2"
+  resolved "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/form-component-module#e1a057ecc7fe3dfb4d16830471afb571e4bf790b"
   dependencies:
     color-pallete-component-module "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/color-pallete-component-module.git"
     informed "^1.10.12"
@@ -4999,14 +4999,6 @@ informed@^1.10.12:
   integrity sha512-xug6ZKR8bj8zcqMdxcL3EMtJePugILCIZZALK9c0w5Mut93KEHjT/TUDViFrrorEgvt1VRyQEFo6jxlUxk5UcA==
   dependencies:
     "@babel/runtime-corejs2" "^7.0.0-rc.1"
-
-informed@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/informed/-/informed-2.0.1.tgz#7d56e13f6201529ed264dc6278fc9dc1628300b3"
-  integrity sha512-eD8A0o96ztpBiwFGq28Q9FqzzdD75nLEVONCmK7OsYST/c1MwL2XKdrcA7b3QuIxvsAyveIDYl2M+6uQyvEx/Q==
-  dependencies:
-    debug "^4.1.1"
-    lodash "^4.17.11"
 
 inherits@2, inherits@2.0.3, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.3"

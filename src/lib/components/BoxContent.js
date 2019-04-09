@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Form} from 'informed';
-import {InputField} from 'form-component-module';
-import {FormGroup,ButtonStyled} from './Style';
+import {InputField, Form} from 'form-component-module';
+import {FormGroup} from './Style';
 import Button from 'button-component-module';
 
 class BoxContent extends Component {
@@ -33,7 +32,7 @@ class BoxContent extends Component {
   })
 
   render() {
-    const {buttonText, buttonLoadingText, subtleText} = this.props;
+    const {buttonText, subtleText} = this.props;
     return (
       <Form
         onSubmit={this.onSubmit}

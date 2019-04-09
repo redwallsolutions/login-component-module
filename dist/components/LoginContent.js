@@ -125,10 +125,8 @@ function (_Component) {
       var _this$props = this.props,
           frontTitle = _this$props.frontTitle,
           frontButtonText = _this$props.frontButtonText,
-          frontButtonLoadingText = _this$props.frontButtonLoadingText,
           backTitle = _this$props.backTitle,
-          backButtonText = _this$props.backButtonText,
-          backButtonLoadingText = _this$props.backButtonLoadingText;
+          backButtonText = _this$props.backButtonText;
       return React.createElement(React.Fragment, null, React.createElement(Background, {
         className: "login-component-module"
       }, React.createElement(React.Fragment, null, React.createElement(Box, {
@@ -143,7 +141,6 @@ function (_Component) {
         getBoxController: this.extractFrontBoxController,
         getFormApi: this.extractFrontFormApi,
         buttonText: frontButtonText,
-        buttonLoadingText: frontButtonLoadingText,
         onSubmit: this.frontOnSubmit,
         subtleText: React.createElement(SubtleLink, {
           style: {
@@ -176,7 +173,6 @@ function (_Component) {
         getBoxController: this.extractBackBoxController,
         getFormApi: this.extractBackFormApi,
         buttonText: backButtonText,
-        buttonLoadingText: backButtonLoadingText,
         onSubmit: this.backOnSubmit,
         subtleText: React.createElement(SubtleLink, {
           onClick: this.toggleFace

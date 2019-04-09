@@ -229,30 +229,6 @@ export const InputStyled = styled.input`
   }
 
 `
-export const ButtonStyled = styled.button`
-  padding: 10px 35px;
-  outline: no;
-  border: 1px solid ${primaryColor};
-  border-radius: 6px;
-  font-size: 17px;
-  background-color: transparent;
-  transition: background .2s, color .2s, border .1s;
-  cursor: pointer;
-  color: ${primaryColor};
-  transition: opacity .5s, transform .2s ease-in-out;
-  &:hover,:active,:focus {
-    color: #fff;
-    background-color: ${primaryColor};
-    border-color: transparent;
-    box-shadow: 0 0 30px -3px rgba(0,0,0,0.3) inset;
-  }
-  &:active {
-    transform: scale(.98);
-  }
-  &:disabled {
-    opacity: .5;
-  }
-`
 
 export const SubtleLink = styled.a`
   opacity: .7;

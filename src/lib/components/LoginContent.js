@@ -102,8 +102,8 @@ class LoginContent extends Component {
 
 
   render() {
-    const {frontTitle, frontButtonText, frontButtonLoadingText,
-          backTitle, backButtonText, backButtonLoadingText} = this.props;
+    const {frontTitle, frontButtonText,
+          backTitle, backButtonText} = this.props;
     return (
       <React.Fragment>
         <Background className='login-component-module'>
@@ -117,7 +117,6 @@ class LoginContent extends Component {
                 getBoxController={this.extractFrontBoxController}
                 getFormApi={this.extractFrontFormApi}
                 buttonText={frontButtonText}
-                buttonLoadingText={frontButtonLoadingText}
                 onSubmit={this.frontOnSubmit}
                 subtleText={<SubtleLink style={{position: 'relative',left: '2em'}}>Esqueci a senha</SubtleLink>}
                 formGroups={[{
@@ -148,7 +147,6 @@ class LoginContent extends Component {
                 getBoxController={this.extractBackBoxController}
                 getFormApi={this.extractBackFormApi}
                 buttonText={backButtonText}
-                buttonLoadingText={backButtonLoadingText}
                 onSubmit={this.backOnSubmit}
                 subtleText={
                   <SubtleLink onClick={this.toggleFace}>

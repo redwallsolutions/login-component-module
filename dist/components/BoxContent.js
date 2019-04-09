@@ -4,9 +4,8 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/esm/possibleConst
 import _getPrototypeOf from "@babel/runtime/helpers/esm/getPrototypeOf";
 import _inherits from "@babel/runtime/helpers/esm/inherits";
 import React, { Component } from 'react';
-import { Form } from 'informed';
-import { InputField } from 'form-component-module';
-import { FormGroup, ButtonStyled } from './Style';
+import { InputField, Form } from 'form-component-module';
+import { FormGroup } from './Style';
 import Button from 'button-component-module';
 
 var BoxContent =
@@ -81,7 +80,6 @@ function (_Component) {
     value: function render() {
       var _this$props = this.props,
           buttonText = _this$props.buttonText,
-          buttonLoadingText = _this$props.buttonLoadingText,
           subtleText = _this$props.subtleText;
       return React.createElement(Form, {
         onSubmit: this.onSubmit,
