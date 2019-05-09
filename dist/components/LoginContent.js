@@ -126,18 +126,26 @@ function (_Component) {
           frontTitle = _this$props.frontTitle,
           frontButtonText = _this$props.frontButtonText,
           backTitle = _this$props.backTitle,
-          backButtonText = _this$props.backButtonText;
-      return React.createElement(React.Fragment, null, React.createElement(Background, {
+          backButtonText = _this$props.backButtonText,
+          appearance = _this$props.appearance;
+      return React.createElement(Background, {
+        appearance: appearance,
         className: "login-component-module"
       }, React.createElement(React.Fragment, null, React.createElement(Box, {
+        appearance: appearance,
         className: "front",
         isBack: this.isBack(),
         isFirstTime: this.isFirstTime()
       }, React.createElement(BoxHeader, {
+        appearance: appearance,
         isBack: false
       }, React.createElement(BoxHeaderImg, {
+        appearance: appearance,
         src: RedwallLogoLight
-      })), React.createElement(BoxTitle, null, frontTitle), React.createElement(BoxContent, {
+      })), React.createElement(BoxTitle, {
+        appearance: appearance
+      }, frontTitle), React.createElement(BoxContent, {
+        appearance: appearance,
         getBoxController: this.extractFrontBoxController,
         getFormApi: this.extractFrontFormApi,
         buttonText: frontButtonText,
@@ -160,21 +168,31 @@ function (_Component) {
           placeholder: 'Senha'
         }]
       }), React.createElement(SubtleLink, {
+        appearance: appearance,
         onClick: this.toggleFace
-      }, React.createElement(Text, null, "Quero criar uma conta!"))), React.createElement(Box, {
+      }, React.createElement(Text, {
+        appearance: appearance
+      }, "Quero criar uma conta!"))), React.createElement(Box, {
+        appearance: appearance,
         className: "back",
         isBack: this.isBack(),
         isFirstTime: this.isFirstTime()
       }, React.createElement(BoxHeader, {
+        appearance: appearance,
         isBack: true
       }, React.createElement(BoxHeaderImg, {
+        appearance: appearance,
         src: RedwallLogoDark
-      })), React.createElement(BoxTitle, null, backTitle), React.createElement(BoxContent, {
+      })), React.createElement(BoxTitle, {
+        appearance: appearance
+      }, backTitle), React.createElement(BoxContent, {
+        appearance: appearance,
         getBoxController: this.extractBackBoxController,
         getFormApi: this.extractBackFormApi,
         buttonText: backButtonText,
         onSubmit: this.backOnSubmit,
         subtleText: React.createElement(SubtleLink, {
+          appearance: appearance,
           onClick: this.toggleFace
         }, "Voltar para login"),
         formGroups: [{
@@ -193,7 +211,7 @@ function (_Component) {
           icon: React.createElement(FaLock, null),
           placeholder: 'Senha'
         }]
-      })))));
+      }))));
     }
   }]);
 

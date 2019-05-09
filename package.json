@@ -1,6 +1,6 @@
 {
   "name": "login-component-module",
-  "version": "1.5.0",
+  "version": "1.6.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -17,8 +17,8 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-react": "^7.0.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-scripts": "^2.1.3",
     "rimraf": "^2.6.3"
   },
@@ -30,12 +30,13 @@
   ],
   "dependencies": {
     "button-component-module": "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/button-component-module",
+    "color": "^3.1.1",
     "color-pallete-component-module": "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/color-pallete-component-module.git",
     "form-component-module": "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/form-component-module",
     "react-icons": "^3.3.0",
     "react-particles-js": "^2.4.2",
     "react-router-dom": "^4.3.1",
     "styled-components": "^4.1.3",
-    "styled-theming": "^2.2.0"
+    "theming-component-module": "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/theming-component-module"
   }
 }

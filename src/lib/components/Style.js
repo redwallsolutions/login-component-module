@@ -1,20 +1,20 @@
 import styled, {createGlobalStyle, keyframes, css} from 'styled-components';
-import Poppins from '../assets/fonts/Poppins-Regular.ttf';
+import Color from 'color';
+import Theming from 'theming-component-module';
 
-const backgroundGradientColor = 'linear-gradient(180deg, rgba(10,10,10, 0.96), rgba(30, 30, 30, 0.96))';
-const primaryColor = 'rgb(45, 99, 122)'
-const invalidColor = 'rgb(181, 38, 19)'
+const theme = Theming.createThemeWithAppearance()
+
+const defaultProps = {
+  theme: 'light',
+  appearance: 'default'
+}
+
+const primaryColor = 'red';
+const invalidColor = 'red';
 
 export const LoginFonts = createGlobalStyle `
-  @font-face {
-    font-family: Poppins;
-    src: url(${Poppins}), format("TrueType");
-    font-display: fallback;
-  }
-
   .login-component-module {
-    font-family: Poppins, sans-serif;
-    color: rgb(89,89,89);
+    font-family: Aria, Helvetica, Tahoma, Geneva, sans-serif;
   }
 
   .login-component-module * {
@@ -24,8 +24,8 @@ export const LoginFonts = createGlobalStyle `
 
 export const Background = styled.div `
   position: relative;
-  background: ${backgroundGradientColor};
-  box-shadow: 0 0 200px 0px rgb(0,0,0) inset;
+  background: ${props => theme(props).contrast};
+  box-shadow: 0 0 200px 0px ${props => Color(theme(props).contrast(props)).darken(0.2).grayscale().string()} inset;
   min-height: 100vh;
   height: auto;
   display: flex;
@@ -33,6 +33,9 @@ export const Background = styled.div `
   align-items: center;
   overflow: hidden;
 `
+
+Background.defaultProps = defaultProps
+
 const comin = keyframes`
   0% {
     transform: perspective(50em) scale(0) rotateY(180deg);
@@ -109,8 +112,8 @@ const flipBackAnimationPropsReverse = css`
 `
 
 export const Box = styled.div `
-  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.1), 0 0 150px 0 rgba(0,0,0,.93);
-  background-color: white;
+  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.2), 0 0 150px 0 ${props => Color(theme(props).contrast(props)).darken(.1).grayscale().string()};
+  background-color: ${props => Color(theme(props).contrast(props)).lighten(0.5).string()};
   width: 35vw;
   height: 100%;
   z-index: 1;
@@ -145,14 +148,18 @@ export const Box = styled.div `
 
 `
 
+Box.defaultProps = defaultProps
+
 export const BoxHeader = styled.div `
-  background-color: ${props=> props.isBack ? 'white' : '#E30613'};
-  box-shadow: 0 0 80px 0 rgba(0,0,0,0.2) inset;
+  background-color: ${props=> props.isBack ? 'white' : theme(props).color};
+  box-shadow: 0 0 80px 0 ${props => Color(theme(props).color(props)).grayscale().fade(.8).string()} inset;
   height: 28%;
   display: flex;
   justify-content: center;
   align-items: center;
 `
+
+BoxHeader.defaultProps = defaultProps
 
 export const BoxHeaderImg = styled.img `
   height: 40%;
@@ -163,14 +170,17 @@ export const BoxHeaderImg = styled.img `
 `
 
 export const BoxTitle = styled.h2 `
-  color: rgba(94, 94, 94, 0.89);
+  color: ${props => Color(theme(props).color(props)).grayscale().fade(.3).string()};
   text-align: center;
   ::after {
     content: ".";
-    color: ${primaryColor};
+    color: ${props => theme(props).color};
     font-size: 40px;
   }
 `
+
+BoxTitle.defaultProps = defaultProps
+
 export const FormGroup = styled.div`
   display: flex;
   width: 70%;
@@ -182,69 +192,30 @@ FormGroup.defaultProps = {
   justify: 'center'
 }
 
-export const InputIcon = styled.span`
-  z-index: 1;
-  color: ${props => props.isFocused ? primaryColor : 'inherit'};
-  position: relative;
-  left: 1.6em;
-  transition: box-shadow 0.2s, color 0.2s, transform 0.3s ease-in-out;
-`
-export const InputStyled = styled.input`
-  text-indent: ${props => props.isFocused ? 3 : 3.5}em;
-  outline: 0;
-  padding: 10px;
-  font-size: 15px;
-  background-color: #fff;
-  border:none;
-  border-bottom: 1px solid #eee;
-  display: block;
-  width: 100%;
-  line-height: 1.5;
-  background-clip: padding-box;
-  transition: border-color 0.15s ease-out, text-indent, 0.2s ease-in-out, color .2s;
-  box-sizing: border-box;
-  color: rgba(100,100,100);
-  &:focus{
-    border-color: ${primaryColor};
-    color: ${primaryColor};
-  }
-  &::placeholder {
-    color: #6c757d;
-    opacity: .5;
-  }
-  &:focus::placeholder {
-    color: ${primaryColor};
-  }
-  &:not([value=""]) {
-    border-color: rgb(161, 161, 161);
-  }
-
-  &:invalid {
-    box-shadow: none;
-  }
-
-  &:invalid:not(:focus) {
-    border-color: ${invalidColor};
-    color: ${invalidColor}
-  }
-
-`
-
 export const SubtleLink = styled.a`
   opacity: .7;
   font-size: 12px;
   cursor: pointer;
+  color: ${props => Color(theme(props).color(props)).fade(.3).grayscale().string()};
   &:active,&:focus,&:hover {
-    color: ${primaryColor}
+    color: ${props => Color(theme(props).color(props)).grayscale().string()};
   }
 `
 export const Text = styled.p`
   margin: 3em 0 0 0;
   font-size: 16px;
   text-align: center;
-  color: ${primaryColor};
+  color: ${props => Color(theme(props).color(props)).fade(.3).string()};
   transition: color .3s;
   &:hover,&:focus,&:active {
-    color: rgb(89,89,89);
+    color: ${props => Color(theme(props).color(props)).grayscale().string()};
   }
 `
+
+SubtleLink.defaultProps = Text.defaultProps = defaultProps
+
+export const getParticleColorStyled = (props) => {
+  return {
+    value: Color(theme(props).color(props)).hex()
+  }
+}

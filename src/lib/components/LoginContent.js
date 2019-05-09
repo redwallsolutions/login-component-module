@@ -103,76 +103,76 @@ class LoginContent extends Component {
 
   render() {
     const {frontTitle, frontButtonText,
-          backTitle, backButtonText} = this.props;
+          backTitle, backButtonText, appearance} = this.props;
     return (
-      <React.Fragment>
-        <Background className='login-component-module'>
-          <React.Fragment>
-            <Box className='front' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
-              <BoxHeader isBack={false}>
-                <BoxHeaderImg src={RedwallLogoLight}/>
-              </BoxHeader>
-              <BoxTitle>{frontTitle}</BoxTitle>
-              <BoxContent
-                getBoxController={this.extractFrontBoxController}
-                getFormApi={this.extractFrontFormApi}
-                buttonText={frontButtonText}
-                onSubmit={this.frontOnSubmit}
-                subtleText={<SubtleLink style={{position: 'relative',left: '2em'}}>Esqueci a senha</SubtleLink>}
-                formGroups={[{
-                  name:'email',
-                  type:'email',
-                  icon:<FaEnvelope/>,
-                  placeholder:'E-mail'
-                }, {
-                  name:'password',
-                  type: 'password',
-                  icon: <FaLock/>,
-                  placeholder: 'Senha'
-                }]}/>
-              <SubtleLink onClick={this.toggleFace}>
-                <Text>
-                  Quero criar uma conta!
-                </Text>
-              </SubtleLink>
-            </Box>
-            <Box className='back' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
-              <BoxHeader isBack={true}>
-                <BoxHeaderImg src={RedwallLogoDark}/>
-              </BoxHeader>
-              <BoxTitle>
-                {backTitle}
-              </BoxTitle>
-              <BoxContent
-                getBoxController={this.extractBackBoxController}
-                getFormApi={this.extractBackFormApi}
-                buttonText={backButtonText}
-                onSubmit={this.backOnSubmit}
-                subtleText={
-                  <SubtleLink onClick={this.toggleFace}>
-                    Voltar para login
-                  </SubtleLink>
-                }
-                formGroups={[{
-                  name:'fullName',
-                  placeholder:'Nome Completo',
-                  type: 'text',
-                  icon:<FaUserAlt/>
-                }, {
-                  name:'email',
-                  type:'email',
-                  icon:<FaEnvelope/>,
-                  placeholder:'Seu melhor email'
-                }, {
-                  name:'password',
-                  type: 'password',
-                  icon: <FaLock/>,
-                  placeholder: 'Senha'
-                }]}/>
-            </Box>
-          </React.Fragment>
-        </Background>
-      </React.Fragment>
+      <Background appearance={appearance} className='login-component-module'>
+        <React.Fragment>
+          <Box appearance={appearance} className='front' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
+            <BoxHeader appearance={appearance} isBack={false}>
+              <BoxHeaderImg appearance={appearance} src={RedwallLogoLight}/>
+            </BoxHeader>
+            <BoxTitle appearance={appearance}>{frontTitle}</BoxTitle>
+            <BoxContent
+              appearance={appearance}
+              getBoxController={this.extractFrontBoxController}
+              getFormApi={this.extractFrontFormApi}
+              buttonText={frontButtonText}
+              onSubmit={this.frontOnSubmit}
+              subtleText={<SubtleLink style={{position: 'relative',left: '2em'}}>Esqueci a senha</SubtleLink>}
+              formGroups={[{
+                name:'email',
+                type:'email',
+                icon:<FaEnvelope/>,
+                placeholder:'E-mail'
+              }, {
+                name:'password',
+                type: 'password',
+                icon: <FaLock/>,
+                placeholder: 'Senha'
+              }]}/>
+            <SubtleLink appearance={appearance} onClick={this.toggleFace}>
+              <Text appearance={appearance}>
+                Quero criar uma conta!
+              </Text>
+            </SubtleLink>
+          </Box>
+          <Box appearance={appearance} className='back' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
+            <BoxHeader appearance={appearance} isBack={true}>
+              <BoxHeaderImg appearance={appearance} src={RedwallLogoDark}/>
+            </BoxHeader>
+            <BoxTitle appearance={appearance}>
+              {backTitle}
+            </BoxTitle>
+            <BoxContent
+              appearance={appearance}
+              getBoxController={this.extractBackBoxController}
+              getFormApi={this.extractBackFormApi}
+              buttonText={backButtonText}
+              onSubmit={this.backOnSubmit}
+              subtleText={
+                <SubtleLink appearance={appearance} onClick={this.toggleFace}>
+                  Voltar para login
+                </SubtleLink>
+              }
+              formGroups={[{
+                name:'fullName',
+                placeholder:'Nome Completo',
+                type: 'text',
+                icon:<FaUserAlt/>
+              }, {
+                name:'email',
+                type:'email',
+                icon:<FaEnvelope/>,
+                placeholder:'Seu melhor email'
+              }, {
+                name:'password',
+                type: 'password',
+                icon: <FaLock/>,
+                placeholder: 'Senha'
+              }]}/>
+          </Box>
+        </React.Fragment>
+      </Background>
     );
   }
 }

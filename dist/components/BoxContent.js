@@ -52,9 +52,11 @@ function (_Component) {
     _this.renderFormGroups = function () {
       return _this.props.formGroups && _this.props.formGroups.map(function (formGroup) {
         return React.createElement(FormGroup, {
+          appearance: _this.props.appearance,
           key: formGroup.name,
           justify: formGroup.justify || 'center'
         }, React.createElement(InputField, {
+          appearance: _this.props.appearance,
           field: formGroup.name,
           type: formGroup.type,
           placeholder: formGroup.placeholder,
@@ -80,7 +82,8 @@ function (_Component) {
     value: function render() {
       var _this$props = this.props,
           buttonText = _this$props.buttonText,
-          subtleText = _this$props.subtleText;
+          subtleText = _this$props.subtleText,
+          appearance = _this$props.appearance;
       return React.createElement(Form, {
         onSubmit: this.onSubmit,
         getApi: this.props.getFormApi,
@@ -94,8 +97,8 @@ function (_Component) {
       }, this.renderFormGroups(), React.createElement(FormGroup, {
         justify: "space-between"
       }, subtleText, React.createElement(Button, {
+        appearance: appearance,
         loading: this.state.buttonIsLoading,
-        appearance: "primary",
         size: "large",
         type: "submit"
       }, buttonText))));

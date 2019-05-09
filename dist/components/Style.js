@@ -1,27 +1,7 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
 
-function _templateObject20() {
-  var data = _taggedTemplateLiteral(["\n  margin: 3em 0 0 0;\n  font-size: 16px;\n  text-align: center;\n  color: ", ";\n  transition: color .3s;\n  &:hover,&:focus,&:active {\n    color: rgb(89,89,89);\n  }\n"]);
-
-  _templateObject20 = function _templateObject20() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject19() {
-  var data = _taggedTemplateLiteral(["\n  opacity: .7;\n  font-size: 12px;\n  cursor: pointer;\n  &:active,&:focus,&:hover {\n    color: ", "\n  }\n"]);
-
-  _templateObject19 = function _templateObject19() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n  text-indent: ", "em;\n  outline: 0;\n  padding: 10px;\n  font-size: 15px;\n  background-color: #fff;\n  border:none;\n  border-bottom: 1px solid #eee;\n  display: block;\n  width: 100%;\n  line-height: 1.5;\n  background-clip: padding-box;\n  transition: border-color 0.15s ease-out, text-indent, 0.2s ease-in-out, color .2s;\n  box-sizing: border-box;\n  color: rgba(100,100,100);\n  &:focus{\n    border-color: ", ";\n    color: ", ";\n  }\n  &::placeholder {\n    color: #6c757d;\n    opacity: .5;\n  }\n  &:focus::placeholder {\n    color: ", ";\n  }\n  &:not([value=\"\"]) {\n    border-color: rgb(161, 161, 161);\n  }\n\n  &:invalid {\n    box-shadow: none;\n  }\n\n  &:invalid:not(:focus) {\n    border-color: ", ";\n    color: ", "\n  }\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin: 3em 0 0 0;\n  font-size: 16px;\n  text-align: center;\n  color: ", ";\n  transition: color .3s;\n  &:hover,&:focus,&:active {\n    color: ", ";\n  }\n"]);
 
   _templateObject18 = function _templateObject18() {
     return data;
@@ -31,7 +11,7 @@ function _templateObject18() {
 }
 
 function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n  z-index: 1;\n  color: ", ";\n  position: relative;\n  left: 1.6em;\n  transition: box-shadow 0.2s, color 0.2s, transform 0.3s ease-in-out;\n"]);
+  var data = _taggedTemplateLiteral(["\n  opacity: .7;\n  font-size: 12px;\n  cursor: pointer;\n  color: ", ";\n  &:active,&:focus,&:hover {\n    color: ", ";\n  }\n"]);
 
   _templateObject17 = function _templateObject17() {
     return data;
@@ -51,7 +31,7 @@ function _templateObject16() {
 }
 
 function _templateObject15() {
-  var data = _taggedTemplateLiteral(["\n  color: rgba(94, 94, 94, 0.89);\n  text-align: center;\n  ::after {\n    content: \".\";\n    color: ", ";\n    font-size: 40px;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  text-align: center;\n  ::after {\n    content: \".\";\n    color: ", ";\n    font-size: 40px;\n  }\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -71,7 +51,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  box-shadow: 0 0 80px 0 rgba(0,0,0,0.2) inset;\n  height: 28%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  box-shadow: 0 0 80px 0 ", " inset;\n  height: 28%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -81,7 +61,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.1), 0 0 150px 0 rgba(0,0,0,.93);\n  background-color: white;\n  width: 35vw;\n  height: 100%;\n  z-index: 1;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n    opacity: 0;\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n  @media (max-width: 768px){\n    width: 70vw;\n  }\n\n  @media (max-width: 415px) {\n    width: 100vw;\n  }\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.2), 0 0 150px 0 ", ";\n  background-color: ", ";\n  width: 35vw;\n  height: 100%;\n  z-index: 1;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n    opacity: 0;\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n  @media (max-width: 768px){\n    width: 70vw;\n  }\n\n  @media (max-width: 415px) {\n    width: 100vw;\n  }\n\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -181,7 +161,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  background: ", ";\n  box-shadow: 0 0 200px 0px rgb(0,0,0) inset;\n  min-height: 100vh;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  background: ", ";\n  box-shadow: 0 0 200px 0px ", " inset;\n  min-height: 100vh;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -191,7 +171,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: Poppins;\n    src: url(", "), format(\"TrueType\");\n    font-display: fallback;\n  }\n\n  .login-component-module {\n    font-family: Poppins, sans-serif;\n    color: rgb(89,89,89);\n  }\n\n  .login-component-module * {\n    box-sizing: border-box;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  .login-component-module {\n    font-family: Aria, Helvetica, Tahoma, Geneva, sans-serif;\n  }\n\n  .login-component-module * {\n    box-sizing: border-box;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -201,12 +181,22 @@ function _templateObject() {
 }
 
 import styled, { createGlobalStyle, keyframes, css } from 'styled-components';
-import Poppins from '../assets/fonts/Poppins-Regular.ttf';
-var backgroundGradientColor = 'linear-gradient(180deg, rgba(10,10,10, 0.96), rgba(30, 30, 30, 0.96))';
-var primaryColor = 'rgb(45, 99, 122)';
-var invalidColor = 'rgb(181, 38, 19)';
-export var LoginFonts = createGlobalStyle(_templateObject(), Poppins);
-export var Background = styled.div(_templateObject2(), backgroundGradientColor);
+import Color from 'color';
+import Theming from 'theming-component-module';
+var theme = Theming.createThemeWithAppearance();
+var defaultProps = {
+  theme: 'light',
+  appearance: 'default'
+};
+var primaryColor = 'red';
+var invalidColor = 'red';
+export var LoginFonts = createGlobalStyle(_templateObject());
+export var Background = styled.div(_templateObject2(), function (props) {
+  return theme(props).contrast;
+}, function (props) {
+  return Color(theme(props).contrast(props)).darken(0.2).grayscale().string();
+});
+Background.defaultProps = defaultProps;
 var comin = keyframes(_templateObject3());
 var flipFront = keyframes(_templateObject4());
 var flipFrontReverse = keyframes(_templateObject5());
@@ -217,6 +207,10 @@ var flipBackReverse = keyframes(_templateObject9());
 var flipBackAnimationProps = css(_templateObject10(), flipBack);
 var flipBackAnimationPropsReverse = css(_templateObject11(), flipBackReverse);
 export var Box = styled.div(_templateObject12(), function (props) {
+  return Color(theme(props).contrast(props)).darken(.1).grayscale().string();
+}, function (props) {
+  return Color(theme(props).contrast(props)).lighten(0.5).string();
+}, function (props) {
   return props.isBack && !props.isFirstTime && flipBackAnimationProps;
 }, function (props) {
   return !props.isBack && !props.isFirstTime && flipBackAnimationPropsReverse;
@@ -231,22 +225,39 @@ export var Box = styled.div(_templateObject12(), function (props) {
 }, function (props) {
   return props.isFirstTime && props.isBack && flipFrontAnimationProps;
 });
+Box.defaultProps = defaultProps;
 export var BoxHeader = styled.div(_templateObject13(), function (props) {
-  return props.isBack ? 'white' : '#E30613';
+  return props.isBack ? 'white' : theme(props).color;
+}, function (props) {
+  return Color(theme(props).color(props)).grayscale().fade(.8).string();
 });
+BoxHeader.defaultProps = defaultProps;
 export var BoxHeaderImg = styled.img(_templateObject14());
-export var BoxTitle = styled.h2(_templateObject15(), primaryColor);
+export var BoxTitle = styled.h2(_templateObject15(), function (props) {
+  return Color(theme(props).color(props)).grayscale().fade(.3).string();
+}, function (props) {
+  return theme(props).color;
+});
+BoxTitle.defaultProps = defaultProps;
 export var FormGroup = styled.div(_templateObject16(), function (props) {
   return props.justify;
 });
 FormGroup.defaultProps = {
   justify: 'center'
 };
-export var InputIcon = styled.span(_templateObject17(), function (props) {
-  return props.isFocused ? primaryColor : 'inherit';
+export var SubtleLink = styled.a(_templateObject17(), function (props) {
+  return Color(theme(props).color(props)).fade(.3).grayscale().string();
+}, function (props) {
+  return Color(theme(props).color(props)).grayscale().string();
 });
-export var InputStyled = styled.input(_templateObject18(), function (props) {
-  return props.isFocused ? 3 : 3.5;
-}, primaryColor, primaryColor, primaryColor, invalidColor, invalidColor);
-export var SubtleLink = styled.a(_templateObject19(), primaryColor);
-export var Text = styled.p(_templateObject20(), primaryColor);
+export var Text = styled.p(_templateObject18(), function (props) {
+  return Color(theme(props).color(props)).fade(.3).string();
+}, function (props) {
+  return Color(theme(props).color(props)).grayscale().string();
+});
+SubtleLink.defaultProps = Text.defaultProps = defaultProps;
+export var getParticleColorStyled = function getParticleColorStyled(props) {
+  return {
+    value: Color(theme(props).color(props)).hex()
+  };
+};

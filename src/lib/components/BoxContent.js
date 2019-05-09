@@ -32,7 +32,7 @@ class BoxContent extends Component {
   })
 
   render() {
-    const {buttonText, subtleText} = this.props;
+    const {buttonText, subtleText, appearance} = this.props;
     return (
       <Form
         onSubmit={this.onSubmit}
@@ -42,7 +42,7 @@ class BoxContent extends Component {
           {this.renderFormGroups()}
           <FormGroup justify='space-between'>
             {subtleText}
-            <Button loading={this.state.buttonIsLoading} appearance='primary' size='large' type='submit'>
+            <Button appearance={appearance} loading={this.state.buttonIsLoading} size='large' type='submit'>
               {buttonText}
             </Button>
           </FormGroup>
@@ -54,8 +54,8 @@ class BoxContent extends Component {
   renderFormGroups = () => (
     (this.props.formGroups &&
     this.props.formGroups.map(formGroup=>(
-      <FormGroup key={formGroup.name} justify={formGroup.justify || 'center'}>
-        <InputField field={formGroup.name} type={formGroup.type} placeholder={formGroup.placeholder} icon={formGroup.icon}/>
+      <FormGroup appearance={this.props.appearance} key={formGroup.name} justify={formGroup.justify || 'center'}>
+        <InputField appearance={this.props.appearance} field={formGroup.name} type={formGroup.type} placeholder={formGroup.placeholder} icon={formGroup.icon}/>
       </FormGroup>
     ))) ||
     <p style={{textAlign:'center'}}>No content.</p>

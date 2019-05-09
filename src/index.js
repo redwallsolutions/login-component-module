@@ -18,8 +18,8 @@ const extractLoginController = (loginController) => {
 const App = () => (
   <React.Fragment>
     <ResetCSS/>
-    <ThemeProvider theme={{mode: 'dark'}}>
-      <Login title="Faça Login" buttonText="Logar" frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController}/>
+    <ThemeProvider theme={{mode: 'light'}}>
+      <Login appearance='default' title="Faça Login" buttonText="Logar" frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController}/>
     </ThemeProvider>
   </React.Fragment>
 );
@@ -62,6 +62,6 @@ const toggleFrontBackButtonLoadingAfter3Seconds = () => {
     localLoginController.controller.toggleBackFaceButtonLoading()
   }, 3000);
 }
-changeToBackFaceAfter3Seconds()
+// changeToBackFaceAfter3Seconds()
 
 render(<App />, document.getElementById("root"));
