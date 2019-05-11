@@ -127,7 +127,8 @@ function (_Component) {
           frontButtonText = _this$props.frontButtonText,
           backTitle = _this$props.backTitle,
           backButtonText = _this$props.backButtonText,
-          appearance = _this$props.appearance;
+          appearance = _this$props.appearance,
+          endText = _this$props.endText;
       return React.createElement(Background, {
         appearance: appearance,
         className: "login-component-module"
@@ -172,7 +173,7 @@ function (_Component) {
         onClick: this.toggleFace
       }, React.createElement(Text, {
         appearance: appearance
-      }, "Quero criar uma conta!"))), React.createElement(Box, {
+      }, endText))), React.createElement(Box, {
         appearance: appearance,
         className: "back",
         isBack: this.isBack(),
@@ -225,6 +226,7 @@ LoginContent.defaultProps = {
   backButtonText: 'Cadastrar',
   frontButtonLoadingText: 'Entrando',
   backButtonLoadingText: 'Cadastrando',
+  endText: 'Faça sua conta agora',
   frontOnSubmit: function frontOnSubmit(data) {
     setTimeout(function () {
       data.component.toggleButtonLoading();

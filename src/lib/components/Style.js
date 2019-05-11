@@ -9,9 +9,6 @@ const defaultProps = {
   appearance: 'default'
 }
 
-const primaryColor = 'red';
-const invalidColor = 'red';
-
 export const LoginFonts = createGlobalStyle `
   .login-component-module {
     font-family: Aria, Helvetica, Tahoma, Geneva, sans-serif;

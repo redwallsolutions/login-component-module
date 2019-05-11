@@ -103,7 +103,7 @@ class LoginContent extends Component {
 
   render() {
     const {frontTitle, frontButtonText,
-          backTitle, backButtonText, appearance} = this.props;
+          backTitle, backButtonText, appearance, endText} = this.props;
     return (
       <Background appearance={appearance} className='login-component-module'>
         <React.Fragment>
@@ -132,7 +132,7 @@ class LoginContent extends Component {
               }]}/>
             <SubtleLink appearance={appearance} onClick={this.toggleFace}>
               <Text appearance={appearance}>
-                Quero criar uma conta!
+                {endText}
               </Text>
             </SubtleLink>
           </Box>
@@ -196,6 +196,7 @@ LoginContent.defaultProps = {
   backButtonText: 'Cadastrar',
   frontButtonLoadingText: 'Entrando',
   backButtonLoadingText: 'Cadastrando',
+  endText: 'Faça sua conta agora',
   frontOnSubmit: (data)=>{
     setTimeout(function () {
       data.component.toggleButtonLoading();

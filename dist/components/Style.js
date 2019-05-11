@@ -188,8 +188,6 @@ var defaultProps = {
   theme: 'light',
   appearance: 'default'
 };
-var primaryColor = 'red';
-var invalidColor = 'red';
 export var LoginFonts = createGlobalStyle(_templateObject());
 export var Background = styled.div(_templateObject2(), function (props) {
   return theme(props).contrast;
