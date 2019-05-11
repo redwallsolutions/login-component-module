@@ -155,7 +155,8 @@ function (_Component) {
           style: {
             position: 'relative',
             left: '2em'
-          }
+          },
+          onClick: this.props.frontOnSubtleLinkClick
         }, "Esqueci a senha"),
         formGroups: [{
           name: 'email',
@@ -227,6 +228,9 @@ LoginContent.defaultProps = {
   frontButtonLoadingText: 'Entrando',
   backButtonLoadingText: 'Cadastrando',
   endText: 'Faça sua conta agora',
+  frontOnSubtleLinkClick: function frontOnSubtleLinkClick() {
+    console.log("subtleText clicked");
+  },
   frontOnSubmit: function frontOnSubmit(data) {
     setTimeout(function () {
       data.component.toggleButtonLoading();

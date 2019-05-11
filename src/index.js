@@ -19,7 +19,7 @@ const App = () => (
   <React.Fragment>
     <ResetCSS/>
     <ThemeProvider theme={{mode: 'light'}}>
-      <Login appearance='default' title="Faça Login" buttonText="Logar" frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController}/>
+      <Login appearance='default' title="Faça Login" buttonText="Logar" frontOnSubtleLinkClick={()=>console.log("hehehe")} frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController}/>
     </ThemeProvider>
   </React.Fragment>
 );

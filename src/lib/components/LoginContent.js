@@ -118,7 +118,11 @@ class LoginContent extends Component {
               getFormApi={this.extractFrontFormApi}
               buttonText={frontButtonText}
               onSubmit={this.frontOnSubmit}
-              subtleText={<SubtleLink style={{position: 'relative',left: '2em'}}>Esqueci a senha</SubtleLink>}
+              subtleText={
+                <SubtleLink style={{position: 'relative',left: '2em'}} onClick={this.props.frontOnSubtleLinkClick}>
+                  Esqueci a senha
+                </SubtleLink>
+              }
               formGroups={[{
                 name:'email',
                 type:'email',
@@ -182,9 +186,11 @@ LoginContent.propTypes = {
   backTitle: PropTypes.string,
   frontButtonText: PropTypes.string,
   backButtonText: PropTypes.string,
+  endText: PropTypes.string,
   frontButtonLoadingText: PropTypes.string,
   backButtonLoadingText: PropTypes.string,
   frontOnSubmit: PropTypes.func,
+  frontOnSubtleLinkClick: PropTypes.func,
   isBackFace: PropTypes.bool,
   getLoginController: PropTypes.func
 }
@@ -197,6 +203,9 @@ LoginContent.defaultProps = {
   frontButtonLoadingText: 'Entrando',
   backButtonLoadingText: 'Cadastrando',
   endText: 'Faça sua conta agora',
+  frontOnSubtleLinkClick: () => {
+    console.log("subtleText clicked")
+  },
   frontOnSubmit: (data)=>{
     setTimeout(function () {
       data.component.toggleButtonLoading();
