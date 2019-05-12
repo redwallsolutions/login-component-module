@@ -5,8 +5,9 @@ import _getPrototypeOf from "@babel/runtime/helpers/esm/getPrototypeOf";
 import _inherits from "@babel/runtime/helpers/esm/inherits";
 import React, { Component } from 'react';
 import { InputField, Form } from 'form-component-module';
-import { FormGroup } from './Style';
 import Button from 'button-component-module';
+import { isEmptyValidator } from './../helpers/utils';
+import { FormGroup } from './Style';
 
 var BoxContent =
 /*#__PURE__*/
@@ -60,7 +61,9 @@ function (_Component) {
           field: formGroup.name,
           type: formGroup.type,
           placeholder: formGroup.placeholder,
-          icon: formGroup.icon
+          icon: formGroup.icon,
+          validate: isEmptyValidator,
+          validateOnChange: true
         }));
       }) || React.createElement("p", {
         style: {
@@ -99,6 +102,7 @@ function (_Component) {
       }, subtleText, React.createElement(Button, {
         appearance: appearance,
         loading: this.state.buttonIsLoading,
+        disabled: this.state.buttonIsLoading,
         size: "large",
         type: "submit"
       }, buttonText))));

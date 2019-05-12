@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {InputField, Form} from 'form-component-module';
-import {FormGroup} from './Style';
 import Button from 'button-component-module';
+
+import { isEmptyValidator } from './../helpers/utils';
+import {FormGroup} from './Style';
 
 class BoxContent extends Component {
 
@@ -42,7 +44,7 @@ class BoxContent extends Component {
           {this.renderFormGroups()}
           <FormGroup justify='space-between'>
             {subtleText}
-            <Button appearance={appearance} loading={this.state.buttonIsLoading} size='large' type='submit'>
+            <Button appearance={appearance} loading={this.state.buttonIsLoading} disabled={this.state.buttonIsLoading} size='large' type='submit'>
               {buttonText}
             </Button>
           </FormGroup>
@@ -55,7 +57,7 @@ class BoxContent extends Component {
     (this.props.formGroups &&
     this.props.formGroups.map(formGroup=>(
       <FormGroup appearance={this.props.appearance} key={formGroup.name} justify={formGroup.justify || 'center'}>
-        <InputField appearance={this.props.appearance} field={formGroup.name} type={formGroup.type} placeholder={formGroup.placeholder} icon={formGroup.icon}/>
+        <InputField appearance={this.props.appearance} field={formGroup.name} type={formGroup.type} placeholder={formGroup.placeholder} icon={formGroup.icon} validate={isEmptyValidator} validateOnChange/>
       </FormGroup>
     ))) ||
     <p style={{textAlign:'center'}}>No content.</p>
