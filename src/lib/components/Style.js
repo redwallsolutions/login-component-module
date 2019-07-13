@@ -139,7 +139,7 @@ export const Box = styled.div `
     width: 70vw;
   }
 
-  @media (max-width: 415px) {
+  @media (max-width: 720px) {
     width: 100vw;
   }
 
