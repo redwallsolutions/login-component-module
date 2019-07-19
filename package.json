@@ -1,6 +1,6 @@
 {
   "name": "login-component-module",
-  "version": "1.7.5",
+  "version": "1.8.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [

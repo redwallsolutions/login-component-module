@@ -142,7 +142,7 @@ function (_Component) {
         isBack: false
       }, React.createElement(BoxHeaderImg, {
         appearance: appearance,
-        src: RedwallLogoLight
+        src: this.props.frontImg
       })), React.createElement(BoxTitle, {
         appearance: appearance
       }, frontTitle), React.createElement(BoxContent, {
@@ -184,7 +184,7 @@ function (_Component) {
         isBack: true
       }, React.createElement(BoxHeaderImg, {
         appearance: appearance,
-        src: RedwallLogoDark
+        src: this.props.backImg
       })), React.createElement(BoxTitle, {
         appearance: appearance
       }, backTitle), React.createElement(BoxContent, {
@@ -223,6 +223,8 @@ function (_Component) {
 LoginContent.defaultProps = {
   frontTitle: 'Faça Login',
   backTitle: 'Cadastre-se',
+  frontImg: RedwallLogoLight,
+  backImg: RedwallLogoDark,
   frontButtonText: 'Entrar',
   backButtonText: 'Cadastrar',
   frontButtonLoadingText: 'Entrando',

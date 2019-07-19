@@ -109,7 +109,7 @@ class LoginContent extends Component {
         <React.Fragment>
           <Box appearance={appearance} className='front' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
             <BoxHeader appearance={appearance} isBack={false}>
-              <BoxHeaderImg appearance={appearance} src={RedwallLogoLight}/>
+              <BoxHeaderImg appearance={appearance} src={this.props.frontImg}/>
             </BoxHeader>
             <BoxTitle appearance={appearance}>{frontTitle}</BoxTitle>
             <BoxContent
@@ -142,7 +142,7 @@ class LoginContent extends Component {
           </Box>
           <Box appearance={appearance} className='back' isBack={this.isBack()} isFirstTime={this.isFirstTime()}>
             <BoxHeader appearance={appearance} isBack={true}>
-              <BoxHeaderImg appearance={appearance} src={RedwallLogoDark}/>
+              <BoxHeaderImg appearance={appearance} src={this.props.backImg}/>
             </BoxHeader>
             <BoxTitle appearance={appearance}>
               {backTitle}
@@ -198,6 +198,8 @@ LoginContent.propTypes = {
 LoginContent.defaultProps = {
   frontTitle: 'Faça Login',
   backTitle: 'Cadastre-se',
+  frontImg: RedwallLogoLight,
+  backImg: RedwallLogoDark,
   frontButtonText: 'Entrar',
   backButtonText: 'Cadastrar',
   frontButtonLoadingText: 'Entrando',
