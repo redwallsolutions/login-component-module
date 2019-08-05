@@ -44,7 +44,7 @@ class BoxContent extends Component {
           {this.renderFormGroups()}
           <FormGroup justify='space-between'>
             {subtleText}
-            <Button appearance={appearance} loading={this.state.buttonIsLoading} disabled={this.state.buttonIsLoading} size='large' type='submit'>
+            <Button theme={{mode:'light'}} appearance={appearance} loading={this.state.buttonIsLoading} disabled={this.state.buttonIsLoading} size='large' type='submit'>
               {buttonText}
             </Button>
           </FormGroup>

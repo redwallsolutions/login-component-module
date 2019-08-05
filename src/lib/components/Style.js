@@ -22,7 +22,7 @@ export const LoginFonts = createGlobalStyle `
 export const Background = styled.div `
   position: relative;
   background: ${props => theme(props).contrast};
-  box-shadow: 0 0 200px 0px ${props => Color(theme(props).contrast(props)).darken(0.2).grayscale().string()} inset;
+  box-shadow: 0 0 200px 0px rgba(0,0,0,0.3) inset;
   min-height: 100vh;
   height: auto;
   display: flex;
@@ -109,8 +109,8 @@ const flipBackAnimationPropsReverse = css`
 `
 
 export const Box = styled.div `
-  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.2), 0 0 150px 0 ${props => Color(theme(props).contrast(props)).darken(.1).grayscale().string()};
-  background-color: ${props => Color(theme(props).contrast(props)).lighten(0.5).string()};
+  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.2), 0 0 150px 0 rgba(0,0,0,0.1);
+  background-color: white;
   width: 35vw;
   height: 100%;
   z-index: 1;
@@ -148,7 +148,7 @@ export const Box = styled.div `
 Box.defaultProps = defaultProps
 
 export const BoxHeader = styled.div `
-  background-color: ${props=> props.isBack ? 'white' : theme(props).color};
+  background-color: 'white';
   box-shadow: 0 0 80px 0 ${props => Color(theme(props).color(props)).grayscale().fade(.8).string()} inset;
   height: 28%;
   display: flex;

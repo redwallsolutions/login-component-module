@@ -18,7 +18,7 @@ const extractLoginController = (loginController) => {
 const App = () => (
   <React.Fragment>
     <ResetCSS/>
-    <ThemeProvider theme={{mode: 'light'}}>
+    <ThemeProvider theme={{mode: 'light', defaultContrast: 'linear-gradient(45deg, #F05A28 0%, #A3317A 100%)'}}>
       <Login appearance='default' title="Faça Login" buttonText="Logar" frontOnSubtleLinkClick={()=>console.log("hehehe")} frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController}/>
     </ThemeProvider>
   </React.Fragment>
