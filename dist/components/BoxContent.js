@@ -100,6 +100,9 @@ function (_Component) {
       }, this.renderFormGroups(), React.createElement(FormGroup, {
         justify: "space-between"
       }, subtleText, React.createElement(Button, {
+        theme: {
+          mode: 'light'
+        },
         appearance: appearance,
         loading: this.state.buttonIsLoading,
         disabled: this.state.buttonIsLoading,

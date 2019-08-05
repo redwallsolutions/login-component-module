@@ -51,7 +51,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  box-shadow: 0 0 80px 0 ", " inset;\n  height: 28%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: 'white';\n  box-shadow: 0 0 80px 0 ", " inset;\n  height: 28%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -61,7 +61,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.2), 0 0 150px 0 ", ";\n  background-color: ", ";\n  width: 35vw;\n  height: 100%;\n  z-index: 1;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n    opacity: 0;\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n  @media (max-width: 768px){\n    width: 70vw;\n  }\n\n  @media (max-width: 720px) {\n    width: 100vw;\n  }\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  box-shadow: 0 0 0.5px 0 rgba(0,0,0,.2), 0 0 150px 0 rgba(0,0,0,0.1);\n  background-color: white;\n  width: 35vw;\n  height: 100%;\n  z-index: 1;\n  position: absolute;\n  &.front,&.back {\n    backface-visibility: hidden;\n    transform-style: preserve-3d;\n  }\n\n  &.back {\n    transform:rotateY(-180deg);\n    ", ";\n    ", ";\n    ", ";\n    opacity: 0;\n  }\n\n  &.front {\n    animation: ", " 3s cubic-bezier(0,1.06,0,.99) .3s both;\n    ", "\n    ", "\n    ", "\n  }\n\n  @media (max-width: 768px){\n    width: 70vw;\n  }\n\n  @media (max-width: 720px) {\n    width: 100vw;\n  }\n\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -161,7 +161,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  background: ", ";\n  box-shadow: 0 0 200px 0px ", " inset;\n  min-height: 100vh;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  background: ", ";\n  box-shadow: 0 0 200px 0px rgba(0,0,0,0.3) inset;\n  min-height: 100vh;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -191,8 +191,6 @@ var defaultProps = {
 export var LoginFonts = createGlobalStyle(_templateObject());
 export var Background = styled.div(_templateObject2(), function (props) {
   return theme(props).contrast;
-}, function (props) {
-  return Color(theme(props).contrast(props)).darken(0.2).grayscale().string();
 });
 Background.defaultProps = defaultProps;
 var comin = keyframes(_templateObject3());
@@ -205,10 +203,6 @@ var flipBackReverse = keyframes(_templateObject9());
 var flipBackAnimationProps = css(_templateObject10(), flipBack);
 var flipBackAnimationPropsReverse = css(_templateObject11(), flipBackReverse);
 export var Box = styled.div(_templateObject12(), function (props) {
-  return Color(theme(props).contrast(props)).darken(.1).grayscale().string();
-}, function (props) {
-  return Color(theme(props).contrast(props)).lighten(0.5).string();
-}, function (props) {
   return props.isBack && !props.isFirstTime && flipBackAnimationProps;
 }, function (props) {
   return !props.isBack && !props.isFirstTime && flipBackAnimationPropsReverse;
@@ -225,8 +219,6 @@ export var Box = styled.div(_templateObject12(), function (props) {
 });
 Box.defaultProps = defaultProps;
 export var BoxHeader = styled.div(_templateObject13(), function (props) {
-  return props.isBack ? 'white' : theme(props).color;
-}, function (props) {
   return Color(theme(props).color(props)).grayscale().fade(.8).string();
 });
 BoxHeader.defaultProps = defaultProps;
