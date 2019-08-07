@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from "react-dom";
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import doge from './lib/assets/img/doge.jpg';
 import Login from './lib';
 
 const ResetCSS = createGlobalStyle`
@@ -19,7 +20,7 @@ const App = () => (
   <React.Fragment>
     <ResetCSS/>
     <ThemeProvider theme={{mode: 'light'}}>
-      <Login appearance='default' title="Faça Login" buttonText="Logar" frontOnSubtleLinkClick={()=>console.log("hehehe")} frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController}/>
+      <Login appearance='default' title="Faça Login" buttonText="Logar" frontOnSubtleLinkClick={()=>console.log("hehehe")} frontOnSubmit={(data)=>{console.log(data)}} getLoginController={extractLoginController} frontImg={doge}/>
     </ThemeProvider>
   </React.Fragment>
 );
