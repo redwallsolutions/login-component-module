@@ -44,19 +44,6 @@ const LoginContent: FC<ILoginProps & ICommonProps> = ({
 		firstTime = false
 	}, [])
 
-	const innerOnFrontSubmit = (credentials: any) => {
-		setFrontButtonIsLoading(true)
-		if (onFrontSubmit) {
-			onFrontSubmit(credentials)
-		}
-	}
-	const innerOnBackSubmit = (data: any) => {
-		setBackButtonIsLoading(true)
-		if (onBackSubmit) {
-			onBackSubmit(data)
-		}
-	}
-
 	const themeToApply = useContext(ThemeContext) || theme
 
 	return (
@@ -86,7 +73,7 @@ const LoginContent: FC<ILoginProps & ICommonProps> = ({
 								Esqueci a senha
 							</SubtleLink>
 						}
-						onSubmit={innerOnFrontSubmit}
+						onSubmit={onFrontSubmit}
 					>
 						<FormContainer>
 							<InputContainer>
@@ -144,7 +131,7 @@ const LoginContent: FC<ILoginProps & ICommonProps> = ({
 					<BoxTitle appearance={appearance} theme={themeToApply}>
 						{backTitle}
 					</BoxTitle>
-					<BoxContent buttonText={backButtonText} onSubmit={innerOnBackSubmit}>
+					<BoxContent buttonText={backButtonText} onSubmit={onBackSubmit}>
 						<FormContainer>
 							<InputContainer>
 								<InputField
