@@ -10,11 +10,18 @@ const Reset = createGlobalStyle`
   }
 `
 
+let loginController;
+
 const App: FC = () => {
+	const getLoginController = (controller) => {
+		loginController = controller
+		console.log(loginController)
+	}
+	
 	return (
 		<>
 			<Reset />
-			<Login />
+			<Login getLoginController={getLoginController}/>
 		</>
 	)
 }

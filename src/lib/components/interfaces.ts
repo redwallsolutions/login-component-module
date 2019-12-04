@@ -14,6 +14,7 @@ export interface IBoxProps {
 }
 
 export interface ILoginProps {
+	getLoginController?:(controller:any) => void
 	isBackFace?: boolean
 	frontTitle?: string
 	backTitle?: string

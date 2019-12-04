@@ -23,6 +23,7 @@ import Button from '@redwallsolutions/button-component-module'
 let firstTime = true
 
 const LoginContent: FC<ILoginProps & ICommonProps> = ({
+	getLoginController,
 	isBackFace,
 	theme = { mode: 'light' },
 	appearance = 'default',
@@ -42,6 +43,9 @@ const LoginContent: FC<ILoginProps & ICommonProps> = ({
 
 	useEffect(() => {
 		firstTime = false
+		if(getLoginController) {
+			getLoginController({setFrontButtonIsLoading, setBackButtonIsLoading})
+		}
 	}, [])
 
 	const themeToApply = useContext(ThemeContext) || theme
