@@ -44,7 +44,7 @@ const LoginContent: FC<ILoginProps & ICommonProps> = ({
 	useEffect(() => {
 		firstTime = false
 		if(getLoginController) {
-			getLoginController({setFrontButtonIsLoading, setBackButtonIsLoading})
+			getLoginController({setFrontButtonIsLoading, setBackButtonIsLoading, setIsBackFaceState})
 		}
 	}, [])
 
